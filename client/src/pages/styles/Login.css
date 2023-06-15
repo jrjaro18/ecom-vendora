@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+.loginbody{
+    background-image: linear-gradient(rgb(225, 200, 200), rgb(228, 137, 244));
+    width: 100vw;
+    height: 87.5vh;
+    padding-top: 12.5vh;
+}
+
+.logincontainer{
+    width:60vw;
+    height:75vh;
+    margin-left: auto;
+    margin-right: auto;
+}
+.loginleftimgbox{
+    width: 28vw;
+    height: 75vh;
+    float: left;
+    background-color: rgb(234, 153, 153);
+    /* background-image: url(https://wallpapercave.com/dwp2x/wp7566451.jpg); */
+    background-size: cover;
+}
+.loginleftimgbox > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.loginrightformbox{
+    width: 32vw;
+    height: 75vh;
+    float: right;
+    background-color: rgba(253, 252, 253, 0.114);
+    font-family: 'Poppins', sans-serif;
+}
+
+.loginform{
+    margin-top: 17%;
+    margin-left: 2%;
+}
+.loginformtitle{
+    font-size:3vmax;
+    font-weight: 600;
+    margin-bottom: 0.5%;
+}
+.loginformsubtitle{
+    font-size:1.5vmax;
+    margin-bottom: 3%;
+}
+.loginformfields{
+    display: flex;
+    flex-direction: column;
+    gap:1vh;
+    margin-bottom: 5%;
+}
+.loginformbuttons{
+    margin-left: 8%;
+    margin-top: 3%;
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+}
+.loginformbuttonor{
+    display: flex;
+    flex-direction: row;
+    margin-left:8%;
+    align-items: center;
+}
+.loginformbuttonor > div {
+    width:35%;
+    border-bottom: 1px solid black;
+}
+@media screen and (max-width: 1010px){
+    .loginbody{
+        height: 100vh;
+    }
+    .logincontainer{
+        margin-left: 34vw;
+        margin-top: 10vh;
+    }
+    .loginleftimgbox{
+        display: none;
+    }
+    .loginrightformbox{
+        width: 80vw;
+        height: auto;
+        float: right;
+        padding:4vw;
+    }
+    .loginform{
+        margin-top: 0%;
+    }
+}
