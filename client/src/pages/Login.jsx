@@ -10,7 +10,7 @@ const Login = () => {
                 <div className='loginleftimgbox' >
                     <img src="https://wallpapercave.com/dwp2x/wp7566451.jpg" alt='leftimage'/>
                 </div>
-                <div className='loginrightformbox'>
+                <form className='loginrightformbox'>
                     <div className='loginform'>
                         <div className='loginformheading'>
                             <div className='loginformtitle'>
@@ -41,7 +41,7 @@ const Login = () => {
                         </div>
                             <div className="loginformbuttons">
                                 <div className='loginformloginbutton'>
-                                    <Button variant="contained" style={{ backgroundColor: 'rgb(36, 32, 36)', color: "white", width: "85%" }} >Login</Button>
+                                    <Button variant="contained" style={{ backgroundColor: 'rgb(36, 32, 36)', color: "white", width: "85%" }} onSubmit={{}}>Login</Button>
                                 </div>
                                 <div className='loginformregisterbutton'>
                                     <Button variant="contained" style={{backgroundColor: 'rgb(166, 113, 224)', width: "85%" }}>Register</Button>
@@ -57,7 +57,7 @@ const Login = () => {
                             </div>
                         
                     </div>
-                </div>
+                </form>
             </div>
         </div>
     )
