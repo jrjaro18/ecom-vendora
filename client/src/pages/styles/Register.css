@@ -17,9 +17,8 @@
     position: absolute;
     top:12vh;
     left:27vw;
-min-width: 200px;
-    background-color: aliceblue;
-    opacity: 0.5;
+    min-width: 200px;
+    background-color: rgba(227, 182, 248, 0.452);
     width: 40vw;
     display: flex;
     flex-direction: column;
@@ -61,13 +60,17 @@ min-width: 200px;
 @media screen and (max-width: 768px) {
     .registrationcontainer{
         width: 80vw;
-        left:8vw;
+        left:6vw;
+        padding: 4vw;
     }
     .registrationotherdetails{
         flex-wrap: wrap;
         flex-direction: column;
         align-items: start;
         gap:2vh;
+    }
+    .registrationtitle{
+        margin-bottom: 2vh;
     }
     #outlined-select-gender{
         width:12.6rem;

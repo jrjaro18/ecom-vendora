@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+/* Note: minimum width of navbar of has been set to 800px. If you want to change it, change the min-width of .navbarcontainer */
+
+.navbarcontainer{
+    height:4.2vmax; 
+    background-color: rgb(35, 41, 45);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    /*min-width: 800px; here */
+    min-height:40px;
+}
+.navbarlogo>a {
+    color: #dfc7c7;
+    font-size: 4vh;
+    font-weight: 800;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+}
+.navbarlist>ul{
+    display: flex;
+    list-style: none;
+}
+.navbarlist a{
+    color: #f0dcdc;
+    font-size: 2.7vh;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    margin: 0 1rem;
+}
+.more{
+    display: none;
+}
+.menulist{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 2vw;
+    gap: 1.5vh;
+}
+.menulistitem{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10%;
+}
+.menulist a{
+    color: #0c0c0c;
+    font-size: 2vmax;
+    font-family: 'Arial', sans-serif;
+    text-decoration: none;
+}
+@media (max-width:900px) {
+    .navbarlist>ul>li:not(.more){
+        display: none;
+    }
+    .more{
+        display:unset;
+    }
+}
