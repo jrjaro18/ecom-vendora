@@ -14,7 +14,7 @@ const Navbar = () => {
         left: '80%',
         transform: 'translate(-50%, -50%)',
         width: '30vw',
-        bgcolor: '#f1e5e5',
+        bgcolor: 'rgb(22, 23, 24)',
         border: '0px',
         boxShadow: 20,
         paddingLeft:"24px",

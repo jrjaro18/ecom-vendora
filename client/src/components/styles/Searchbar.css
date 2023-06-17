@@ -3,14 +3,14 @@
     justify-content: center;
     align-items: flex-start;
     margin-bottom: 20px;
-    margin: 2vh 1vw;
+    margin: 2vh 0.5vw;
 }
 .searchbarform input{
-    width: 95%;
-    height: 40px;
-    border-radius: 18px 0 0 18px;
+    width: 98%;
+    height: 3vmax;
+    border-radius: 30px 0 0 30px;
     border: 1px solid #2e2626;
-    background-color: transparent;
+    background-color: #eee6e6;
     padding: 0 10px;
     font-size: 16px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -24,10 +24,10 @@
     border: 1.4px solid #413535;
 }
 .searchbarform button{
-    height: 40px;
-    border-radius: 0 18px 18px 0;
+    height: 3vmax;
+    border-radius: 0 30px 30px 0;
     border:0px;
-    background-color: rgb(35, 41, 45);
+    background-color: rgb(24, 25, 26);
     color: #fff;
     font-size: 16px;
     outline: none;
@@ -36,4 +36,14 @@
 }
 .searchbarform button:hover{
     background-color: #121510;
+}
+@media (max-width:1010px) {
+    .searchbarform input{
+        height:5.99vmax;
+        border-radius:0;
+    }
+    .searchbarform button{
+        height: 6vmax;
+        border-radius: 0px;
+    }
 }

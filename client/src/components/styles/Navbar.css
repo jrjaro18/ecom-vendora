@@ -3,8 +3,8 @@
 /* Note: minimum width of navbar of has been set to 800px. If you want to change it, change the min-width of .navbarcontainer */
 
 .navbarcontainer{
-    height:4.2vmax; 
-    background-color: rgb(35, 41, 45);
+    height:4vmax; 
+    background-color: rgb(22, 23, 24);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -16,7 +16,7 @@
     min-height:40px;
 }
 .navbarlogo>a {
-    color: #dfc7c7;
+    color: #f4eded;
     font-size: 4vh;
     font-weight: 800;
     font-family: 'Poppins', sans-serif;
@@ -53,7 +53,7 @@
     gap: 10%;
 }
 .menulist a{
-    color: #0c0c0c;
+    color: #f7ecec;
     font-size: 2vmax;
     font-family: 'Arial', sans-serif;
     text-decoration: none;
@@ -64,5 +64,8 @@
     }
     .more{
         display:unset;
+    }
+    .navbarcontainer{
+        height: 6.4vmax;
     }
 }

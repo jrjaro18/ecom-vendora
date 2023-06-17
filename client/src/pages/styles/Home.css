@@ -1,4 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@600&family=Poppins:wght@300&display=swap');
+
 .homepagebody{
-    background-color: #fbecec;
-    height: 100vh;
+    background-color: #fdf0f0;
+    /* height: 400vh; */
+}
+.homepagecarousel{
+    margin-bottom:4vh;
+    border-bottom: 1px solid #000000;
+    padding-bottom: 6vh;
+}
+.homepagecarouselimage{
+    width: 100%;
+    height: 80vh;
+}
+.homepagecontent1{
+    margin-bottom: 1vh;
+    border-bottom: 1px solid #000000;
+    padding-bottom: 4vh;
+}
+.homepagecontent1title{
+    font-size: 1rem;
+    font-weight:600;
+    font-family: 'Poppins', sans-serif;
+    padding: 0;
+    height: 1.2rem;
+    text-align: center;
+}
+.homepagecontent1subtitle{
+    margin-top: 1vh;
+    font-size: 5vmax;
+    line-height: 5vmax;
+    font-weight:bolder;
+    font-family: 'Oswald', sans-serif;
+    margin-bottom: 1vh;
+    text-align: center;
+}
+.homepagecontent1text{
+    margin-top: 3vh;
+    font-size: 1rem;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+.homepagegridcontainer1{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-column-gap: 3vw;
+    padding-left: 1vh;
+    padding-right: 1vh;
+    align-items: center;
+    justify-content: center;
+    align-content: space-between;
+    background-image: linear-gradient(180deg, #fdf0f0 0%, #faa2a2 100%);
+    padding-bottom: 4vh;
+    border-bottom: 1px solid #000000;
+}
+.homepagegrid1item1{
+    grid-column: 1/2;
+    grid-row: 1/3;
+}
+.homepagegridcontainer1>div>img{
+    width: 100%;
+    height: 95%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.homepagegrid1itemtitle{
+    font-size: 5vmax;
+    font-weight:600;
+    font-family: 'Poppins', sans-serif;
+    padding: 0;
+    height: 8vmax;
+    text-align: center;
+}
+.homepagegrid2title{
+    background-color: #faa2a2;
+    font-size: 4vmax;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    padding-left:1vw;
+    padding-top:2vh;
+}
+.homepagegridcontainer2{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 3vw;
+    padding: 1vh;
+    align-items: center;
+    justify-content: center;
+    align-content: space-between;
+    background-image: linear-gradient(180deg, #faa2a2 0%, #cde5f3 100%);
+    padding-bottom: 6vmin;
+    border-bottom: 1px solid #000000;
+}
+.homepagegridcontainer2>div{
+    height:40vh;
+    width: auto;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+}
+.homepagegridcontainer2>div>img{
+    width: 100%;
+    height: 100%;
+    max-height: 32vh;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.homepagegrid2itemtitle{
+    background-color: transparent;
+    font-size: 2vmax;
+    font-family: 'Poppins', sans-serif;
+    line-height: 4vmax;
+    font-weight: 600;
+    padding-left:1vw;
+}
+#gdcontitle3{
+    background-color: #cde5f3;
+}
+#gdno3{
+    background-image: linear-gradient(180deg, #cde5f3 0%, #e8e1c1 70%);
+}
+.outro{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    gap:3vw;
+    padding-top:2vh;
+    background-image: linear-gradient(180deg, #e8e1c1 0%,  #f0e19f 30%);
+    padding-bottom: 6vh;
+}
+.outrotitle{
+    font-size: 4vmax;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 800;
+    padding-left:1vw;
+    height:25vh;
+}
+.outrocontent{
+    font-size: 1.4vmax;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    padding-left:1vw;
+    text-align: justify;
+}
+@media screen and (max-width: 1010px) {
+    .homepagecarouselimage{
+        width: 100%;
+        height: 30vmax;
+    }
+    .homepagegrid1itemtitle{
+        font-size: 3vmax;
+        font-weight:600;
+        font-family: 'Poppins', sans-serif;
+        margin-bottom: 1vh;
+        height: 4vmax;
+    }
+    .homepagegridcontainer2{
+        grid-template-columns: 1fr 1fr;
+        grid-row-gap: 2vh;
+    }
+    .homepagegridcontainer2>div{
+        height: 100%;
+        width: auto;
+        border-radius: 10px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+        flex-direction: column;
+    }
+    .outro{
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+    .outrotitle{
+        font-size: 3vh;
+        height: auto;
+        margin-bottom: 1vh;
+    }
 }
