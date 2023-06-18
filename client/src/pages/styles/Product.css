@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+.productpagebody{
+    background-image: linear-gradient(to bottom, rgb(253, 250, 249), rgb(251, 247, 247));
+}
+.productpagecontainer{
+    /* min-height: 250vh; */
+    height:auto;
+    padding-bottom: 2vh;
+    margin-top: 2vh;
+}
+.productpagecontainercontent1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 5vmax;
+    gap:4vw;
+}
+/* .productpagecontainercontent1text{
+    height: 95vh;
+    overflow-y: scroll;
+} */
+.productpagecontainercontent1text{
+    margin-left:55vw;
+}
+.productpagecontainercontent1title{
+    font-size: 3vmax;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    color: rgb(0, 0, 0);
+    margin-bottom: 1vmax;
+    text-align: center;
+}
+.productpagecontainercontent1price,.productpagecontainercontent1descriptiontitle,.productpagecontainercontent1commentstitle{
+    font-size: 2rem;
+    font-weight: 100;
+    font-family: 'Poppins', sans-serif;
+    color: rgb(0, 0, 0);
+    margin-bottom: 2vmax;
+}
+.productpagecontainercontent1price{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 2vw;
+    
+}
+.productpagedollarsign{
+    font-size:3rem;
+    font-weight: 800;
+}
+.productpagecontainercontent1rating{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-end;
+    gap: 1vw;
+    margin-bottom: 2vmax;
+    font-size: 2vmax;
+}
+.productpagecontainercontent1buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2vw;
+    margin-top:2vmax;
+    margin-bottom:1vmax;
+    padding-bottom: 2vmax;
+    border-bottom: 1px solid rgb(176, 96, 96);
+}
+
+.productpagecontainercontent1description{
+    border-bottom: 1px solid rgb(176, 96, 96);
+    padding-bottom: 1vmax;
+    margin-bottom: 1vmax;
+}
+.productpagecontainercontent1descriptiontext{
+    font-size: 1rem;
+    font-weight: 100;
+    font-family: 'Poppins', sans-serif;
+    color: rgb(0, 0, 0);
+    margin-bottom: 2vmax;
+}
+.slick-prev:before, .slick-next:before {
+    color: black;
+}
+.productpagecontainercontent1img{
+    position:fixed;
+}
+.productpageimgslickcontainer{
+    height: 50vw;
+    width: 48vw;
+    margin-left: 3vmax;
+    background-color:rgba(255, 255, 255, 0.18);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid rgb(176, 96, 96); */
+}
+.productpagecarouselimage{
+    max-width:45vw;
+    height:auto;
+    width:auto;
+    max-height: 45vw;
+    min-height: 42vw;
+    margin:auto;
+}
+.productpagecontainercontent1commentsuserandrating{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 3vmax;
+    gap:3vmax;
+    margin-bottom: 1vmax;
+    font-size: 1.3rem;
+    font-weight: 100;
+    font-family: 'Poppins', sans-serif;
+}
+.productpagecontainercontent1commentscommenttext{
+    font-size: 1rem;
+    font-weight: 100;
+    font-family: 'Poppins', sans-serif;
+    color: rgb(0, 0, 0);
+    margin-bottom: 2vmax;
+}
+@media screen and (max-width:1010px) {
+    .productpagecontainercontent1img{
+        position: unset;
+    }
+    .productpagecarouselimage{
+        width:87vw;
+        max-width: 87vw;
+        height: 87vw;
+        max-height:87vw;
+    }
+    .productpageimgslickcontainer{
+        width: 87vw;
+        height:87vw;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .productpagecontainercontent1{
+        flex-direction: column;
+        gap: 2vw;
+    }
+    .productpagecontainercontent1text{
+        margin-left:2vw;
+    }
+    .productpagecontainercontent1buttons{
+        justify-content: space-around;
+    }
+    .productpagecontainercontent1price{
+        justify-content: space-around;
+    }
+    .productpagecontainercontent1commentsuserandrating{
+        padding:unset;
+        justify-content: space-between;
+    }
+}

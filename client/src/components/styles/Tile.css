@@ -3,6 +3,7 @@
     padding: 1vw;
     max-height:auto;
     align-items: center;
+    border: 1px solid rgb(0, 0, 0);
 }
 .tileimagecontainer{
     overflow: hidden;
