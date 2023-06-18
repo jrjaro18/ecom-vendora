@@ -1,0 +1,60 @@
+.searchpagebody{
+    background-color: #f9f7f7;
+    min-height:100vh;
+}
+.searchpagecomponent{
+    display: flex;
+    flex-direction: row;
+}
+.searchpageleftcomponent{
+    width:18vw;
+    padding-left: 1vw;
+}
+.searchpagerightcomponenttext, .searchpageleftcomponenttext {
+    font: 1.2em sans-serif;
+}
+.searchpagerightcomponent{
+    width:80vw;
+    border-left: 1px solid #000000;
+    min-height: 100vh;
+    padding-left: 1vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.searchpagecomponentresultgrid{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 1vw;
+    grid-row-gap:1vh;
+    padding: 1vh;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 6vmin;
+    height: auto;
+}
+@media screen and (max-width: 1320px) {
+    .searchpagecomponentresultgrid{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .searchpagerightcomponenttext{
+        text-align: center;
+    }
+}
+@media screen and (max-width: 900px) {
+    .searchpagecomponentresultgrid{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .searchpageleftcomponent{
+        display: none;
+    }
+    .searchpagerightcomponent{
+        border-left: none;
+    }
+        .searchpagecomponentresultgrid{
+            grid-template-columns: 1fr 1fr;
+        }
+        .searchpagerightcomponenttext{
+           text-align: center;
+        }
+}

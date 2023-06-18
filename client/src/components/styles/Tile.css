@@ -1,0 +1,44 @@
+.tilecontainer{
+    background-color: rgb(255, 255, 255);
+    padding: 1vw;
+    max-height:auto;
+    align-items: center;
+}
+.tileimagecontainer{
+    overflow: hidden;
+    position: relative;
+}
+.tileimage{
+    max-width: 99%;
+    width: auto;
+    max-height: 38vh;
+    object-fit: cover;
+}
+.tiletextcontainer{
+    display: flex;
+    flex-direction: column;
+    gap:0.1em;
+}
+.tiletexttitle{
+    font: 1.3em sans-serif;
+    font-weight: 400;
+}
+.tiletextauthor{
+    font: 0.8em sans-serif;
+    font-weight: 300;
+}
+.tiletextprice{
+    margin-top: 0.2em;
+    font: 1.3em sans-serif;
+    font-weight: 600;
+}
+@media screen and (max-width: 800px) {
+    .tilecontainer{
+        height:auto;
+        width: 45vw;
+    }
+    .tileimage{
+        width:auto;
+        height:30vh;
+    }
+}
