@@ -1,0 +1,21 @@
+.sellerpagetitle{
+    font-size: 2rem;
+    font-weight: 200;
+    margin: 0;
+    padding: 0;
+    margin: 2vh 1vw;
+    color: #000000;
+    font-family: 'Roboto', sans-serif;
+}
+.sellerpageform{
+    margin: 0 1vw;
+}
+.sellerpageformtitle, .sellerpageformdesc, .sellerpageformprice, .sellerpageformstock, .sellerpageformimages, .sellerpageformtags{
+    margin-bottom: 5vh;
+}
+.sellerpageformproducttitle{
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 1vh;
+}
