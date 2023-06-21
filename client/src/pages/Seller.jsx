@@ -49,7 +49,7 @@ const Seller = () => {
     }), [
         isFocused,
         isDragAccept,
-        isDragReject
+        isDragReject,
     ]);
     const options = [
         { value: 'electronics', label: 'Electronics' },

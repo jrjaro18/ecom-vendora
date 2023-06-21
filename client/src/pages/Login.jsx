@@ -1,9 +1,16 @@
 import React from 'react'
+import axios from 'axios'
 import TextField from '@mui/material/TextField'
 import Button from '@mui/material/Button'
 import GoogleIcon from '@mui/icons-material/Google';
 import './styles/Login.css'
 const Login = () => {
+    const [email, setEmail] = React.useState('')
+    const [password, setPassword] = React.useState('')
+    const onGoogleLogin = () => {
+        console.log('google login')
+        window.open('http://localhost:5000/auth/google')
+    }
     return (
         <div className='loginbody'>
             <div className='logincontainer'>
@@ -52,7 +59,7 @@ const Login = () => {
                                     <div/> 
                                 </div>
                                 <div className='loginformgooglebutton'>
-                                    <Button variant="outlined" style={{ width: "85%" }}><GoogleIcon style={{marginRight:"10%"}}/> Signup With Google</Button>
+                                    <Button variant="outlined" style={{ width: "85%" }} onClick={()=>{onGoogleLogin()}}><GoogleIcon style={{marginRight:"10%"}}/> Signup With Google</Button>
                                 </div>
                             </div>
                         

@@ -1,0 +1,23 @@
+.historycontainer{
+    margin: 0 1vw;
+    padding-bottom:1vh;
+    background-color: rgb(240, 242, 223);
+}
+.historybutton{
+    margin-top:1vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap:3vw;
+}
+.historygrid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1vw;
+    margin-top: 2vh;
+}
+@media screen and (max-width: 768px) {
+    .historygrid{
+        grid-template-columns: 1fr 1fr;
+    }    
+}

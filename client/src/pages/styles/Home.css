@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@600&family=Poppins:wght@300&display=swap');
 
 .homepagebody{
-    background-color: #fdf0f0;
+    background-color: #faf5f5;
     /* height: 400vh; */
 }
 .homepagecarousel{
@@ -51,7 +51,7 @@
     align-items: center;
     justify-content: center;
     align-content: space-between;
-    background-image: linear-gradient(180deg, #fdf0f0 0%, #faa2a2 100%);
+    background-image: linear-gradient(180deg, #faf5f5 0%, #faa2a2 100%);
     padding-bottom: 4vh;
     border-bottom: 1px solid #000000;
 }

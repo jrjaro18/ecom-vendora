@@ -1,0 +1,35 @@
+.cartpagebody{
+    background-color: rgb(244, 247, 235);
+}
+.cartpagegrid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-row-gap: 30px;
+    grid-column-gap:10px;
+    margin: 30px 0;
+    padding-left: 1vw;
+    padding-right: 1vw;
+}
+.cartpageitemdiv{
+    display: flex;
+    flex-direction: column;
+    gap:0.5rem;
+    justify-content: space-between;
+}
+.cartpagecheckout{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 3vh;
+    padding-left: 1vw;
+    padding-right: 1vw;
+}
+.cartpagecheckoutprice{
+    font-size: 1.5rem;
+    font-family: 'Poppins', sans-serif;
+}
+@media screen and (max-width: 768px) {
+    .cartpagegrid{
+        grid-template-columns: 1fr 1fr;
+    }
+}

@@ -1,0 +1,27 @@
+.googleuserform{
+    margin-top: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    width:max-content;
+    padding: 5%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    box-shadow: 0 0 10px #ccc;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:2.4vh;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
+    color: #333;
+}
+.googleuserforminput{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.2vh;
+}
