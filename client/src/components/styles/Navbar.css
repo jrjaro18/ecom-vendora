@@ -24,8 +24,20 @@
 }
 .navbarlist>ul{
     display: flex;
-    list-style: none;
+    list-style: none; 
+    gap: 1vw;
 }
+
+.navbarlist>ul>li>a{
+    padding:0.1em;
+}
+.navbarlist>ul>li>a:hover{
+background-color: #f4eded;
+color:black;
+border-radius: 15px;
+transition: 500ms;
+}
+
 .navbarlist a{
     color: #f0dcdc;
     font-size: 2.7vh;

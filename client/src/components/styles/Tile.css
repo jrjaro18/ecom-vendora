@@ -1,45 +1,70 @@
 .tilecontainer{
-    background-color: rgb(255, 255, 255);
+    background-image: linear-gradient(90deg, #f8e9e9 0%, #ebeae4 100%);
     padding: 1vw;
     max-height:auto;
     align-items: center;
     border: 1px solid rgb(0, 0, 0);
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: unset;
 }
 .tileimagecontainer{
     overflow: hidden;
     position: relative;
 }
 .tileimage{
-    max-width: 99%;
+    max-width: 100%;
     width: auto;
-    max-height: 38vh;
+    max-height: 32vh;
     object-fit: cover;
 }
 .tiletextcontainer{
     display: flex;
     flex-direction: column;
-    gap:0.1em;
+    
+    gap:0.05em;
 }
 .tiletexttitle{
-    font: 1.3em sans-serif;
+    font: 1.7vmax "Poppins", san-serif;
     font-weight: 400;
 }
 .tiletextauthor{
-    font: 0.8em sans-serif;
+    font: 0.8vmax "Poppins", san-serif;
     font-weight: 300;
+    
 }
 .tiletextprice{
     margin-top: 0.2em;
-    font: 1.3em sans-serif;
+    font: 3vmax "Poppins", san-serif;
     font-weight: 600;
 }
 @media screen and (max-width: 800px) {
     .tilecontainer{
-        height:auto;
+        height:30vmax;
         width: 45vw;
+        align-items: unset;
     }
     .tileimage{
-        width:auto;
-        height:30vh;
+        width:43vw;
+        height:15vmax;
+        object-fit:contain;
     }
+}
+.tilecontainer:hover{
+    background-image: none;
+    background-color: rgba(204, 199, 199, 0.393);
+    box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.5);
+    transform: scale(1.01);
+    cursor: pointer;
+    transition: 200ms;
+}
+
+.tilecontainer:active{
+    background-image: none;
+    background-color: rgba(204, 199, 199, 0.393);
+    box-shadow: 0 0 0.5em rgba(219, 111, 111, 0.5);
+    transform: scale(0.99);
+    transition: 200ms;
 }

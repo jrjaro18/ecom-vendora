@@ -21,4 +21,6 @@ body{
   ::-webkit-scrollbar-thumb:hover {
     background-color: #555; /* Change the color of the scrollbar thumb on hover */
   }
-  
+  * {
+    -webkit-tap-highlight-color: transparent; /* For iOS devices */
+}

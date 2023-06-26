@@ -86,15 +86,13 @@
 }
 .productpagecontainercontent1img{
     position:fixed;
+    top:12%
 }
 .productpageimgslickcontainer{
     height: 50vw;
     width: 48vw;
     margin-left: 3vmax;
-    background-color:rgba(255, 255, 255, 0.18);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    /* background-color:rgba(77, 56, 56, 0.18); */
     /* border: 1px solid rgb(176, 96, 96); */
 }
 .productpagecarouselimage{
@@ -104,6 +102,7 @@
     max-height: 45vw;
     min-height: 42vw;
     margin:auto;
+    
 }
 .productpagecontainercontent1commentsuserandrating{
     display: flex;

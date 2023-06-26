@@ -1,26 +1,28 @@
 import React from 'react'
 import './styles/Tile.css'
 import Rating from '@mui/material/Rating';
-const Tile = () => {
+const Tile = (data) => {
+  const { title, author, price, ratings, image } = data.data.item;
+  console.log(data.data.item);
+  const handleClick = () => {
+    window.location.href = `/product/?=${data.data.item._id}`;
+  }
   return (
-    <div className="tilecontainer">
+    <div className="tilecontainer"onClick={()=>{handleClick()}}>
       <div className="tileimagecontainer">
         <center>
-          <img className="tileimage" src="https://th.bing.com/th/id/OIP.rUzy40YTQwutONZQmKgwIwHaHa?pid=ImgDet&rs=1" alt='img' />
+          <img className="tileimage" src={`http://localhost:5000/uploads/${image[0]}`} alt={`${image[0]}`} />
         </center>
       </div>
       <div className="tiletextcontainer">
         <div className="tiletexttitle">
-          Iphone 14
-        </div>
-        <div className="tiletextauthor">
-          Apple Inc.
+          {title}
         </div>
         <div className="tiletextprice">
-          $999.99
+          ${price}
         </div>
         <div className="tiletextrating">
-          <Rating value={3.5} readOnly />
+          <Rating value={ratings} readOnly />
         </div>
       </div>
     </div>

@@ -31,11 +31,13 @@
     float: right;
     background-color: rgba(253, 252, 253, 0.114);
     font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .loginform{
-    margin-top: 17%;
-    margin-left: 2%;
+width: 95%;
 }
 .loginformtitle{
     font-size:3vmax;

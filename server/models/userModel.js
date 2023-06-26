@@ -18,13 +18,35 @@ const User = new Schema({
     dob: {
         type: Date,
     },
-    address: {
-        type: String,
-    },
     gender:{
         type: String,
     },
-    token: {
+    cart: [{
+        type: mongoose.Schema.Types.ObjectId,
+    }],
+    wishlist: [{
+        type: mongoose.Schema.Types.ObjectId,
+    }],
+
+    //to use later
+    
+    consumerOrders: [{
+        productId:{
+            type: mongoose.Schema.Types.ObjectId,
+        },
+        status:{
+            type: String,
+        }
+    }],
+    sellerOrders: [{
+        productId:{
+            type: mongoose.Schema.Types.ObjectId,
+        },
+        status:{
+            type: String,
+        }
+    }],
+    address: {
         type: String,
     },
 })

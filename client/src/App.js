@@ -18,11 +18,11 @@ function App() {
           <Route path="/login" element={<Login/>} />
           <Route path="/register" element={<Register/>} />
           <Route path="/google-user" element={<GoogleUser/>} />
-          <Route path="/sample-search" element={<Search/>} />
-          <Route path="/sample-product" element={<Product/>} />
-          <Route path="/sample-seller" element={<Seller/>} />
+          <Route path="/search/" element={<Search/>} />
+          <Route path="/product" element={<Product/>} />
+          <Route path="/sellers-page" element={<Seller/>} />
           <Route path="/sample-cart" element={<Cart/>} />
-          <Route path="/sample-history" element={<History/>} />
+          <Route path="/your-products" element={<History/>} />
           <Route path="*" element={<h1>404 not found</h1>} />
         </Routes>
       </Router>

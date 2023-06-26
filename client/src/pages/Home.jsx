@@ -1,12 +1,15 @@
-import React from 'react'
+import React, {useEffect} from 'react'
+import axios from 'axios'
 import Navbar from '../components/Navbar'
 import Searchbar from '../components/Searchbar'
 import Footer from '../components/Footer'
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import AddIcon from '@mui/icons-material/Add';
 import './styles/Home.css'
 const Home = () => {
+
   const settings = {
     dots: true,
     infinite: true,
@@ -56,7 +59,7 @@ const Home = () => {
             <div className='homepagegrid1itemtitle'>
               Clothing
             </div>
-            <img src="https://wallpapercave.com/dwp2x/wp9003767.jpg" alt='sara' />
+            <img src="https://media.glamour.com/photos/570431bbc08406e85210502b/master/pass/fashion-2016-03-05-spring-trend-cold-shoulder-proenza-schouler-main.jpg" alt='sara' />
           </div>
           <div className='homepagegrid1item2'>
             <div className='homepagegrid1itemtitle'>
@@ -72,7 +75,12 @@ const Home = () => {
           </div>
         </div>
         <div className='homepagegrid2title'>
+          <div>
           Electronics
+          </div>
+          <div>
+            <AddIcon style={{cursor:"pointer", color:"white", backgroundColor:"black", borderRadius:"20px", }} className='morebutton' />
+          </div>
         </div>
         <div className='homepagegridcontainer2' id='gdno2'>
           <div className='homepagegrid2item1'>
@@ -102,7 +110,12 @@ const Home = () => {
         </div>
 
         <div className='homepagegrid2title' id="gdcontitle3">
+          <div>
           Home Decor
+        </div>
+        <div>
+          <AddIcon sx={{cursor:"pointer", color:"white", backgroundColor:"black", borderRadius:"20px"}} className='morebutton'/>
+        </div>
         </div>
         <div className='homepagegridcontainer2' id='gdno3'>
           <div className='homepagegrid2item1'>

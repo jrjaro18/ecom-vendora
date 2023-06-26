@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import axios from 'axios'
 import './styles/Seller.css'
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
@@ -39,7 +40,6 @@ const Seller = () => {
     const rejectStyle = {
         borderColor: '#ff1744'
     };
-    const [value, setValue] = React.useState('');
     const { acceptedFiles, getRootProps, getInputProps, isFocused, isDragAccept, isDragReject } = useDropzone({ accept: { 'image/jpeg': [] } });
     const style = React.useMemo(() => ({
         ...baseStyle,
@@ -115,6 +115,62 @@ const Seller = () => {
 
     ]
     const animatedComponents = makeAnimated();
+
+    useEffect(() => {
+        const checkAuthorized = async () => {
+            try {
+                const res = await axios.get("http://localhost:5000/api/check/authorized", { withCredentials: true });
+                if (res.status === 404||localStorage.getItem('userDetails')===null) {
+                    localStorage.removeItem('userDetails');
+                    window.location.href = 'http://localhost:3000/login';
+                }
+            } catch (error) {
+                console.log(error);
+                localStorage.removeItem('userDetails');
+                window.location.href = 'http://localhost:3000/login';
+            }
+        };
+        checkAuthorized();
+    }, []);
+
+    const [title, setTitle] = useState('');
+    const [description, setDescription] = useState('');
+    const [price, setPrice] = useState(0);
+    const [category, setCategory] = useState([]);
+    const [stock, setStock] = useState(0);
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        const categories = [];
+        var i = 0;
+        for (i = 0; i < category.length; i++) {
+            categories.push(category[i].value);
+        }
+        console.log(categories);
+        const formData = new FormData();
+        formData.append('title', title);
+        formData.append('description', description);
+        formData.append('price', price);
+        formData.append('category', categories);
+        formData.append('stock', stock);
+        for (i = 0; i < acceptedFiles.length; i++) {
+            formData.append('image', acceptedFiles[i]);
+        }
+        try {
+            const res = await axios.post('http://localhost:5000/api/seller/addproduct', formData, { withCredentials: true }, {
+                headers: {
+                    'Content-Type': 'multipart/form-data',
+                }
+            });
+            console.log(res);
+            window.location.href = 'http://localhost:3000/';
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+
+
     return (
         <div className='sellerpagebody'>
             <Navbar />
@@ -123,30 +179,30 @@ const Seller = () => {
                     Sell Your Products easily with Vendora
                 </div>
                 <div className='sellerpagecontent'>
-                    <form className='sellerpageform'>
+                    <form className='sellerpageform' onSubmit={(e) => { handleSubmit(e) }}>
                         <div className='sellerpageformtitle' >
                             <div className='sellerpageformproducttitle'>
                                 Product Name
                             </div>
-                            <TextField id="outlined-basic" label="Title" variant="outlined" style={{ width: '98vw',marginBottom:"unset" }} />
+                            <TextField id="outlined-basic" label="Title" variant="outlined" style={{ width: '98vw', marginBottom: "unset" }} onChange={(e) => { setTitle(e.target.value) }} />
                         </div>
                         <div className='sellerpageformdesc'>
                             <div className='sellerpageformproducttitle'>
                                 Product Description
                             </div>
-                            <ReactQuill theme="snow" value={value} onChange={setValue} style={{ height: '80vh', marginBottom: '10vh', width: '98vw' }} />
+                            <ReactQuill theme="snow" onChange={(e) => { setDescription(e) }} style={{ height: '80vh', marginBottom: '10vh', width: '98vw' }} />
                         </div>
                         <div className='sellerpageformprice'>
                             <div className='sellerpageformproducttitle'>
                                 Product Price
                             </div>
-                            <TextField id="outlined-basic" label="$" variant="outlined" type='number' style={{ width: "53.5vw" }} />
+                            <TextField id="outlined-basic" label="$" variant="outlined" type='number' onChange={(e) => { setPrice(e.target.value) }} style={{ width: "53.5vw" }} />
                         </div>
                         <div className='sellerpageformstock'>
                             <div className='sellerpageformproducttitle'>
                                 Product Stocks
                             </div>
-                            <TextField id="outlined-basic" label="No. of items" variant="outlined" type='number' style={{ width: "53.5vw" }} />
+                            <TextField id="outlined-basic" label="No. of items" variant="outlined" type='number' style={{ width: "53.5vw" }} onChange={(e) => { setStock(e.target.value) }} />
                         </div>
                         <div className='sellerpageformimages'>
                             <div className='sellerpageformproducttitle'>
@@ -156,14 +212,14 @@ const Seller = () => {
                                 <input {...getInputProps()} />
                                 <p style={{ marginTop: '25vh' }}>Drag 'n' drop some files here, or click to select files</p>
                                 {
-                                acceptedFiles.map(file => (
-                                    <div key={file.path}>
-                                        {file.path} - {file.size} bytes
-                                    </div>
-                                ))
-                            }
+                                    acceptedFiles.map(file => (
+                                        <div key={file.path}>
+                                            {file.path} - {file.size} bytes
+                                        </div>
+                                    ))
+                                }
                             </div>
-                            
+
                         </div>
                         <div className='sellerpageformtags'>
                             <div className='sellerpageformproducttitle'>
@@ -175,10 +231,11 @@ const Seller = () => {
                                 defaultValue={[]}
                                 isMulti
                                 options={options}
+                                onChange={(e) => { setCategory(e) }}
                             />
                         </div>
                         <div className='sellerpageformsubmit'>
-                            <Button variant="contained" color="primary" style={{marginBottom:'2vh'}}>
+                            <Button variant="contained" color="primary" type="submit" style={{ marginBottom: '2vh' }}>
                                 Submit <PublishIcon />
                             </Button>
                         </div>

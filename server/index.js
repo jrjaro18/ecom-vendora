@@ -1,35 +1,49 @@
 const express = require('express');
 const session = require('express-session');
-const mongoose = require('mongoose');
 const cors = require('cors');
-const userRoutes = require('./routes/userRoutes');
-const passport = require('passport');
+const cookieParser = require('cookie-parser');
 require('dotenv').config();
-require('./auth.js')
 
+// Import the database connection
+require('./database');
+
+// ======= Global Middleware =======
 const app = express();
 
-app.use(cors());
-app.use(upload.array())
-app.use(session({secret:"rohan",resave:false,saveUninitialized:false}));
-app.use(passport.initialize());
+const corsOptions = {
+  origin: 'http://localhost:3000',
+  credentials: true, // Enable sending cookies
+};
+app.use(cors(corsOptions));
+app.use(session({
+  secret: process.env.SESSION_SECRET,
+  resave: false,
+  saveUninitialized: false,
+}));
 app.use(express.json());
-app.use('/api/user', userRoutes);
 app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser());
+app.use('/uploads', express.static(__dirname + '/uploads'));
+// ======= Routes =======
+const userRoutes = require('./routes/userRoutes');
+const sellerRoutes = require('./routes/sellerRoutes');
+const productRoutes = require('./routes/productRoutes');
 
-const port = process.env.PORT;
+app.use('/api/user', userRoutes);
+app.use('/api/seller', sellerRoutes);
+app.use('/api/product', productRoutes);
 
-app.listen(port, () => console.log(`Server started on port ${port}`));
-mongoose.connect(process.env.DB_STRING, 
-    { useNewUrlParser: true,
-     useUnifiedTopology: true,
-    }).then(() => console.log('MongoDB Connected...')).catch(err => console.log(err));
+// ======= Server Setup =======
+const port = process.env.PORT || 5000;
+app.listen(port, () => {
+  console.log(`Server started on port ${port}`);
+});
 
-app.get('/auth/google', passport.authenticate('google', { scope: ['profile','email','openid'] }));
+const jwtVerify = require('./middlewares/verifyjwt');
+// app.get("/api/products",jwtVerify,(req,res)=>{
+//   res.send("hello");
+// })
 
-app.get('/auth/google/callback', 
-    passport.authenticate('google', { failureRedirect: 'http://localhost:3000/login' }),
-    function(req, res) {
-    // Successful authentication, redirect home.
-    res.redirect('http://localhost:3000/');
-    });
+app.get("/api/check/authorized", jwtVerify, (req, res) => {
+  res.send("authorized");
+})

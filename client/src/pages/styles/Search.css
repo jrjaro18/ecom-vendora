@@ -1,60 +1,64 @@
-.searchpagebody{
-    background-color: #f8f6f5;
-    min-height:100vh;
+.searchpagebody {
+    background-image: linear-gradient(90deg, #f7f5e9 40%, #f7d0c5 100%);
+    min-height: 100vh;
 }
-.searchpagecomponent{
+
+.searchpagecomponent {
     display: flex;
     flex-direction: row;
 }
-.searchpageleftcomponent{
-    width:18vw;
+
+/* .searchpageleftcomponent {
+    width: 18vw;
     padding-left: 1vw;
+} */
+
+.searchpagerightcomponenttext,
+.searchpageleftcomponenttext {
+    font: 1.2em 'Roboto', sans-serif;
 }
-.searchpagerightcomponenttext, .searchpageleftcomponenttext {
-    font: 1.2em sans-serif;
-}
-.searchpagerightcomponent{
-    width:80vw;
-    border-left: 1px solid #000000;
+
+.searchpagerightcomponent {
+    width: 95vw;
     min-height: 100vh;
-    padding-left: 1vw;
     margin-left: auto;
     margin-right: auto;
 }
 
-.searchpagecomponentresultgrid{
-    display:grid;
+.searchpagecomponentresultgrid {
+    display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-column-gap: 1vw;
-    grid-row-gap:1vh;
+    grid-row-gap: 1vh;
     padding: 1vh;
     align-items: center;
     justify-content: center;
     padding-bottom: 6vmin;
     height: auto;
 }
+
 @media screen and (max-width: 1320px) {
-    .searchpagecomponentresultgrid{
+    .searchpagecomponentresultgrid {
         grid-template-columns: 1fr 1fr 1fr;
     }
-    .searchpagerightcomponenttext{
+
+    .searchpagerightcomponenttext {
         text-align: center;
     }
 }
+
 @media screen and (max-width: 900px) {
-    .searchpagecomponentresultgrid{
-        grid-template-columns: 1fr 1fr 1fr;
-    }
-    .searchpageleftcomponent{
+    .searchpageleftcomponent {
         display: none;
     }
-    .searchpagerightcomponent{
+    .searchpagerightcomponent {
         border-left: none;
     }
-        .searchpagecomponentresultgrid{
-            grid-template-columns: 1fr 1fr;
-        }
-        .searchpagerightcomponenttext{
-           text-align: center;
-        }
+    .searchpagecomponentresultgrid {
+        grid-template-columns: 1fr 1fr;
+        column-gap:2vw
+    }
+    .searchpagerightcomponenttext {
+        text-align: center;
+    }
 }
