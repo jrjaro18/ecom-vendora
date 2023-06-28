@@ -120,7 +120,7 @@ const Seller = () => {
         const checkAuthorized = async () => {
             try {
                 const res = await axios.get("http://localhost:5000/api/check/authorized", { withCredentials: true });
-                if (res.status === 404||localStorage.getItem('userDetails')===null) {
+                if (res.status === 288||localStorage.getItem('userDetails')===null) {
                     localStorage.removeItem('userDetails');
                     window.location.href = 'http://localhost:3000/login';
                 }
@@ -168,9 +168,7 @@ const Seller = () => {
             console.log(error);
         }
     }
-
-
-
+    
     return (
         <div className='sellerpagebody'>
             <Navbar />

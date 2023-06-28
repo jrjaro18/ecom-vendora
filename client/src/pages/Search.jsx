@@ -77,9 +77,8 @@ const Search = () => {
                             </div>
                             <div className='searchpagecomponentresultgrid'>
                                 {results.map((result) => (
-                                    <Tile key={result._id} data={result}/>
+                                    <Tile key={result._id} data={result.item}/>
                                 ))}
-                                
                             </div>
                         </div>)
                         : (

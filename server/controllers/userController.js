@@ -77,10 +77,10 @@ exports.googlelogin = async (req, res) => {
         } else {
             user.password = undefined;
         }
-        const token = jwt.sign({ user }, process.env.JWT_SECRET, { expiresIn: '2h' });
+        const token = jwt.sign({ user }, process.env.JWT_SECRET, { expiresIn: '24h' });
         res.cookie('token', token, {
             httpOnly: true,
-            maxAge: 2 * 60 * 60 * 1000,
+            maxAge: 24 * 60 * 60 * 1000,
             secure: true
         });
         return res.status(200).send({ msg: "User logged in successfully", userDetails: user });
@@ -148,36 +148,36 @@ exports.alterWishlist = async (req, res) => {
 }
 
 exports.setProductsUser = async (req, res) => {
-    const productId  = req.params.id.split(':')[1];
+    const productId = req.params.id.split(':')[1];
     //console.log(productId);
-    
+
     try {
         //is Product in cart
         const presentCart = await User.findOne({ _id: req.user._id, cart: productId });
         //is Product in wishlist
         const presentWishlist = await User.findOne({ _id: req.user._id, wishlist: productId });
         //can a person review
-        const reviewer = await Product.findOne({_id: productId, buyers: req.user._id})
-        const reviewed = await Product.findOne({_id: productId, reviews: {$elemMatch: {userId: req.user._id}}});
+        const reviewer = await Product.findOne({ _id: productId, buyers: req.user._id })
+        const reviewed = await Product.findOne({ _id: productId, reviews: { $elemMatch: { userId: req.user._id } } });
         var canReview = false;
-        if(reviewer){
-            if(reviewed){
+        if (reviewer) {
+            if (reviewed) {
                 canReview = false;
-            } else{
+            } else {
                 canReview = true;
             }
         }
         //console.log(reviewer, reviewed , canReview);
         if (presentCart && presentWishlist) {
-            return res.status(200).send({ cart: true, wishlist: true, canReview: canReview});
+            return res.status(200).send({ cart: true, wishlist: true, canReview: canReview });
         } else if (presentCart) {
-            return res.status(200).send({ cart: true, wishlist: false, canReview: canReview});
+            return res.status(200).send({ cart: true, wishlist: false, canReview: canReview });
         }
         else if (presentWishlist) {
-            return res.status(200).send({ cart: false, wishlist: true, canReview: canReview});
+            return res.status(200).send({ cart: false, wishlist: true, canReview: canReview });
         }
         else {
-            return res.status(200).send({ cart: false, wishlist: false, canReview: canReview});
+            return res.status(200).send({ cart: false, wishlist: false, canReview: canReview });
         }
 
     } catch (err) {
@@ -186,3 +186,56 @@ exports.setProductsUser = async (req, res) => {
     }
 }
 
+exports.getCart = async (req, res) => {
+    try {
+        const user = await User.findOne({ _id: req.user._id }, { cart: 1 });
+        var cart = [];
+        var userCartPrice = 0;
+        if (user) {
+            for (let i = 0; i < user.cart.length; i++) {
+                const product = await Product.findById(user.cart[i],{description:0, reviews:0, buyers:0, __v:0});
+                cart.push(product);
+                userCartPrice += product.price;
+            }
+            console.log(cart);
+            return res.status(200).send({cart: cart, userCartPrice: userCartPrice, userDetails: req.user});
+        }
+    } catch (err) {
+        console.log(err);
+        res.status(299).send("Internal server error");
+    }
+}
+
+exports.getWishlist= async (req, res) => {
+    try {
+        const user = await User.findOne({ _id: req.user._id }, { wishlist: 1 });
+        var wishlist = [];
+        var userWishlistPrice = 0;
+        if (user) {
+            for (let i = 0; i < user.wishlist.length; i++) {
+                const product = await Product.findById(user.wishlist[i],{description:0, reviews:0, buyers:0, __v:0});
+                wishlist.push(product);
+                userWishlistPrice += product.price;
+            }
+            console.log(wishlist);
+            return res.status(200).send({wishlist: wishlist, userWishlistPrice: userWishlistPrice});
+        }
+    } catch (err) {
+        console.log(err);
+        res.status(299).send("Internal server error");
+    }
+}
+
+// exports.checkout = async(req, res)=>{
+//     try{
+//         const user = await User.findOne({_id: req.user._id});
+//         if(user){
+//             user.cart = [];
+//             await user.save();
+//             return res.status(200).send("Checkout Successfull");
+//         }
+//     }catch(err){
+//         console.log(err);
+//         res.status(299).send("Internal server error");
+//     }
+// }

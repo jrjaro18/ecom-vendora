@@ -32,10 +32,10 @@
     padding:0.1em;
 }
 .navbarlist>ul>li>a:hover{
-background-color: #f4eded;
-color:black;
+background-color: #000000;
+color:rgb(230, 223, 223);
 border-radius: 15px;
-transition: 500ms;
+transition: 250ms;
 }
 
 .navbarlist a{
@@ -56,13 +56,13 @@ transition: 500ms;
     justify-content: center;
     align-items: flex-start;
     padding-left: 2vw;
-    gap: 1.5vh;
+    gap: 2vh;
 }
 .menulistitem{
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10%;
+    gap: 13%;
 }
 .menulist a{
     color: #f7ecec;

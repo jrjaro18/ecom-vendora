@@ -8,6 +8,7 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 import InfoIcon from '@mui/icons-material/Info';
 import CategoryIcon from '@mui/icons-material/Category';
 import LogoutIcon from '@mui/icons-material/Logout';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 import './styles/Navbar.css'
 const Navbar = () => {
     const style = {
@@ -33,11 +34,11 @@ const Navbar = () => {
     const handleClose = () => setOpen(false);
     const handleLogout = async () => {
         localStorage.removeItem("userDetails");
-        try{
+        try {
             const res = await axios.post('http://localhost:5000/api/user/logout', {}, { withCredentials: true });
             console.log(res);
 
-        } catch (err){
+        } catch (err) {
             console.log(err);
         }
     }
@@ -48,13 +49,13 @@ const Navbar = () => {
             </div>
             <div className='navbarlist'>
                 <ul>
-                    <li><a href="/about">About</a></li>
-                    <li><a href="/your-products">Products</a></li>
-                    <li><a href="/cart" style={{display:'flex',alignItems:"center"}}><ShoppingCartIcon /></a></li>
+                    <li><a href="/wishlist" style={{ display: 'flex', alignItems: "center", color: "#ef597c", padding: "5px" }}><FavoriteIcon /></a></li>
+                    <li><a href="/cart" style={{ display: 'flex', alignItems: "center", color: "#9773d1", padding: "5px" }}><ShoppingCartIcon /></a></li>
+                    <li><a href="/your-products" style={{ display: 'flex', alignItems: "center", color: "#a7df8a", padding: "5px" }}><CategoryIcon /></a></li>
                     {
                         userDetails ?
-                            <li><a href="/" style={{cursor:"pointer", display:'flex',alignItems:"center"}} onClick={()=>{handleLogout()}}><LogoutIcon /></a></li> :
-                            <li><a href="/login" style={{display:'flex',alignItems:"center"}}><PersonIcon /></a></li>
+                            <li><a href="/" style={{ cursor: "pointer", display: 'flex', alignItems: "center", padding: "5px" }} onClick={() => { handleLogout() }}><LogoutIcon /></a></li> :
+                            <li><a href="/login" style={{ display: 'flex', alignItems: "center", padding: "5px" }}><PersonIcon /></a></li>
                     }
                     <li className="more" onClick={handleOpen}><MoreVertIcon style={{ color: "#f0dcdc" }} /></li>
                     <Modal
@@ -65,13 +66,13 @@ const Navbar = () => {
                     >
                         <Box sx={style}>
                             <ul className='menulist'>
-                                <li><a href="/about" className='menulistitem'><InfoIcon /> About</a></li>
                                 <li><a href="/your-products" className='menulistitem'><CategoryIcon />Products</a></li>
                                 <li><a href="/cart" className='menulistitem'><ShoppingCartIcon />Cart</a></li>
+                                <li><a href="/wishlist" className='menulistitem'><FavoriteIcon />Wishlist</a></li>
                                 {
                                     userDetails ?
-                                    <li><a href="/" style={{cursor:"pointer"}} onClick={()=>{handleLogout()}} className='menulistitem'><LogoutIcon />Logout</a></li> :
-                                    <li><a href="/login" className='menulistitem'><PersonIcon />Login</a></li>
+                                        <li><a href="/" style={{ cursor: "pointer" }} onClick={() => { handleLogout() }} className='menulistitem'><LogoutIcon />Logout</a></li> :
+                                        <li><a href="/login" className='menulistitem'><PersonIcon />Login</a></li>
                                 }
                             </ul>
                         </Box>

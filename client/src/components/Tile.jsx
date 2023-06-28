@@ -2,10 +2,10 @@ import React from 'react'
 import './styles/Tile.css'
 import Rating from '@mui/material/Rating';
 const Tile = (data) => {
-  const { title, author, price, ratings, image } = data.data.item;
-  console.log(data.data.item);
+  //console.log(data);
+  const { title, author, price, ratings, image } = data.data;
   const handleClick = () => {
-    window.location.href = `/product/?=${data.data.item._id}`;
+    window.location.href = `/product/?=${data.data._id}`;
   }
   return (
     <div className="tilecontainer"onClick={()=>{handleClick()}}>

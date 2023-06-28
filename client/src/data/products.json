@@ -1,0 +1,1750 @@
+[
+    {
+        "value": "electronics",
+        "label": "Electronics"
+    },
+    {
+        "value": "mobile",
+        "label": "Mobile"
+    },
+    {
+        "value": "men",
+        "label": "Men"
+    },
+    {
+        "value": "women",
+        "label": "Women"
+    },
+    {
+        "value": "kids",
+        "label": "Kids"
+    },
+    {
+        "value": "home",
+        "label": "Home"
+    },
+    {
+        "value": "furniture",
+        "label": "Furniture"
+    },
+    {
+        "value": "appliances",
+        "label": "Appliances"
+    },
+    {
+        "value": "beauty",
+        "label": "Beauty"
+    },
+    {
+        "value": "toys",
+        "label": "Toys"
+    },
+    {
+        "value": "books",
+        "label": "Books"
+    },
+    {
+        "value": "sports",
+        "label": "Sports"
+    },
+    {
+        "value": "fitness",
+        "label": "Fitness"
+    },
+    {
+        "value": "bags",
+        "label": "Bags"
+    },
+    {
+        "value": "jewellery",
+        "label": "Jewellery"
+    },
+    {
+        "value": "watches",
+        "label": "Watches"
+    },
+    {
+        "value": "shoes",
+        "label": "Shoes"
+    },
+    {
+        "value": "travel",
+        "label": "Travel"
+    },
+    {
+        "value": "grocery",
+        "label": "Grocery"
+    },
+    {
+        "value": "medical",
+        "label": "Medical"
+    },
+    {
+        "value": "industrial",
+        "label": "Industrial"
+    },
+    {
+        "value": "automobile",
+        "label": "Automobile"
+    },
+    {
+        "value": "pet",
+        "label": "Pet"
+    },
+    {
+        "value": "tools",
+        "label": "Tools"
+    },
+    {
+        "value": "garden",
+        "label": "Garden"
+    },
+    {
+        "value": "music",
+        "label": "Music"
+    },
+    {
+        "value": "movies",
+        "label": "Movies"
+    },
+    {
+        "value": "games",
+        "label": "Games"
+    },
+    {
+        "value": "software",
+        "label": "Software"
+    },
+    {
+        "value": "office",
+        "label": "Office"
+    },
+    {
+        "value": "stationery",
+        "label": "Stationery"
+    },
+    {
+        "value": "food",
+        "label": "Food"
+    },
+    {
+        "value": "drinks",
+        "label": "Drinks"
+    },
+    {
+        "value": "health",
+        "label": "Health"
+    },
+    {
+        "value": "personal",
+        "label": "Personal"
+    },
+    {
+        "value": "garden",
+        "label": "Garden"
+    },
+    {
+        "value": "tools",
+        "label": "Tools"
+    },
+    {
+        "value": "baby",
+        "label": "Baby"
+    },
+    {
+        "value": "clothing",
+        "label": "Clothing"
+    },
+    {
+        "value": "accessories",
+        "label": "Accessories"
+    },
+    {
+        "value": "tshirt",
+        "label": "T-Shirt"
+    },
+    {
+        "value": "shirt",
+        "label": "Shirt"
+    },
+    {
+        "value": "jeans",
+        "label": "Jeans"
+    },
+    {
+        "value": "trousers",
+        "label": "Trousers"
+    },
+    {
+        "value": "shorts",
+        "label": "Shorts"
+    },
+    {
+        "value": "saree",
+        "label": "Saree"
+    },
+    {
+        "value": "kurti",
+        "label": "Kurti"
+    },
+    {
+        "value": "salwar",
+        "label": "Salwar"
+    },
+    {
+        "value": "suits",
+        "label": "Suits"
+    },
+    {
+        "value": "lehenga",
+        "label": "Lehenga"
+    },
+    {
+        "value": "blouse",
+        "label": "Blouse"
+    },
+    {
+        "value": "sweater",
+        "label": "Sweater"
+    },
+    {
+        "value": "jacket",
+        "label": "Jacket"
+    },
+    {
+        "value": "sweatshirt",
+        "label": "Sweatshirt"
+    },
+    {
+        "value": "hoodie",
+        "label": "Hoodie"
+    },
+    {
+        "value": "coat",
+        "label": "Coat"
+    },
+    {
+        "value": "blazer",
+        "label": "Blazer"
+    },
+    {
+        "value": "sweatpants",
+        "label": "Sweatpants"
+    },
+    {
+        "value": "cap",
+        "label": "Cap"
+    },
+    {
+        "value": "hat",
+        "label": "Hat"
+    },
+    {
+        "value": "phone",
+        "label": "Phone"
+    },
+    {
+        "value": "laptop",
+        "label": "Laptop"
+    },
+    {
+        "value": "tablet",
+        "label": "Tablet"
+    },
+    {
+        "value": "headphones",
+        "label": "Headphones"
+    },
+    {
+        "value": "camera",
+        "label": "Camera"
+    },
+    {
+        "value": "television",
+        "label": "Television"
+    },
+    {
+        "value": "smartwatch",
+        "label": "Smartwatch"
+    },
+    {
+        "value": "gaming console",
+        "label": "Gaming Console"
+    },
+    {
+        "value": "speaker",
+        "label": "Speaker"
+    },
+    {
+        "value": "power bank",
+        "label": "Power Bank"
+    },
+    {
+        "value": "printer",
+        "label": "Printer"
+    },
+    {
+        "value": "monitor",
+        "label": "Monitor"
+    },
+    {
+        "value": "keyboard",
+        "label": "Keyboard"
+    },
+    {
+        "value": "mouse",
+        "label": "Mouse"
+    },
+    {
+        "value": "router",
+        "label": "Router"
+    },
+    {
+        "value": "external hard drive",
+        "label": "External Hard Drive"
+    },
+    {
+        "value": "memory card",
+        "label": "Memory Card"
+    },
+    {
+        "value": "graphic card",
+        "label": "Graphic Card"
+    },
+    {
+        "value": "processor",
+        "label": "Processor"
+    },
+    {
+        "value": "ram",
+        "label": "RAM"
+    },
+    {
+        "value": "home decor",
+        "label": "Home Decor"
+    },
+    {
+        "value": "bedroom",
+        "label": "Bedroom"
+    },
+    {
+        "value": "living room",
+        "label": "Living Room"
+    },
+    {
+        "value": "kitchen",
+        "label": "Kitchen"
+    },
+    {
+        "value": "bathroom",
+        "label": "Bathroom"
+    },
+    {
+        "value": "dining",
+        "label": "Dining"
+    },
+    {
+        "value": "curtains",
+        "label": "Curtains"
+    },
+    {
+        "value": "rugs",
+        "label": "Rugs"
+    },
+    {
+        "value": "lighting",
+        "label": "Lighting"
+    },
+    {
+        "value": "clock",
+        "label": "Clock"
+    },
+    {
+        "value": "mirror",
+        "label": "Mirror"
+    },
+    {
+        "value": "bed",
+        "label": "Bed"
+    },
+    {
+        "value": "sofa",
+        "label": "Sofa"
+    },
+    {
+        "value": "table",
+        "label": "Table"
+    },
+    {
+        "value": "chair",
+        "label": "Chair"
+    },
+    {
+        "value": "cabinet",
+        "label": "Cabinet"
+    },
+    {
+        "value": "cookware",
+        "label": "Cookware"
+    },
+    {
+        "value": "cutlery",
+        "label": "Cutlery"
+    },
+    {
+        "value": "appliances",
+        "label": "Appliances"
+    },
+    {
+        "value": "mattress",
+        "label": "Mattress"
+    },
+    {
+        "value": "towel",
+        "label": "Towel"
+    },
+    {
+        "value": "utensils",
+        "label": "Utensils"
+    },
+    {
+        "value": "fragrance",
+        "label": "Fragrance"
+    },
+    {
+        "value": "skincare",
+        "label": "Skincare"
+    },
+    {
+        "value": "haircare",
+        "label": "Haircare"
+    },
+    {
+        "value": "makeup",
+        "label": "Makeup"
+    },
+    {
+        "value": "bath and body",
+        "label": "Bath and Body"
+    },
+    {
+        "value": "personal care",
+        "label": "Personal Care"
+    },
+    {
+        "value": "toys and games",
+        "label": "Toys and Games"
+    },
+    {
+        "value": "action figures",
+        "label": "Action Figures"
+    },
+    {
+        "value": "puzzles",
+        "label": "Puzzles"
+    },
+    {
+        "value": "board games",
+        "label": "Board Games"
+    },
+    {
+        "value": "dolls",
+        "label": "Dolls"
+    },
+    {
+        "value": "arts and crafts",
+        "label": "Arts and Crafts"
+    },
+    {
+        "value": "outdoor toys",
+        "label": "Outdoor Toys"
+    },
+    {
+        "value": "baby toys",
+        "label": "Baby Toys"
+    },
+    {
+        "value": "educational toys",
+        "label": "Educational Toys"
+    },
+    {
+        "value": "fiction",
+        "label": "Fiction"
+    },
+    {
+        "value": "non-fiction",
+        "label": "Non-Fiction"
+    },
+    {
+        "value": "thriller",
+        "label": "Thriller"
+    },
+    {
+        "value": "mystery",
+        "label": "Mystery"
+    },
+    {
+        "value": "romance",
+        "label": "Romance"
+    },
+    {
+        "value": "biography",
+        "label": "Biography"
+    },
+    {
+        "value": "science fiction",
+        "label": "Science Fiction"
+    },
+    {
+        "value": "fantasy",
+        "label": "Fantasy"
+    },
+    {
+        "value": "self-help",
+        "label": "Self-Help"
+    },
+    {
+        "value": "sports and fitness",
+        "label": "Sports and Fitness"
+    },
+    {
+        "value": "exercise equipment",
+        "label": "Exercise Equipment"
+    },
+    {
+        "value": "yoga and meditation",
+        "label": "Yoga and Meditation"
+    },
+    {
+        "value": "sports accessories",
+        "label": "Sports Accessories"
+    },
+    {
+        "value": "athletic shoes",
+        "label": "Athletic Shoes"
+    },
+    {
+        "value": "sports clothing",
+        "label": "Sports Clothing"
+    },
+    {
+        "value": "gym bags",
+        "label": "Gym Bags"
+    },
+    {
+        "value": "hiking gear",
+        "label": "Hiking Gear"
+    },
+    {
+        "value": "camping equipment",
+        "label": "Camping Equipment"
+    },
+    {
+        "value": "luggage",
+        "label": "Luggage"
+    },
+    {
+        "value": "backpack",
+        "label": "Backpack"
+    },
+    {
+        "value": "suitcase",
+        "label": "Suitcase"
+    },
+    {
+        "value": "duffel bag",
+        "label": "Duffel Bag"
+    },
+    {
+        "value": "travel accessories",
+        "label": "Travel Accessories"
+    },
+    {
+        "value": "snacks",
+        "label": "Snacks"
+    },
+    {
+        "value": "beverages",
+        "label": "Beverages"
+    },
+    {
+        "value": "canned goods",
+        "label": "Canned Goods"
+    },
+    {
+        "value": "spices",
+        "label": "Spices"
+    },
+    {
+        "value": "condiments",
+        "label": "Condiments"
+    },
+    {
+        "value": "health supplements",
+        "label": "Health Supplements"
+    },
+    {
+        "value": "vitamins",
+        "label": "Vitamins"
+    },
+    {
+        "value": "protein powder",
+        "label": "Protein Powder"
+    },
+    {
+        "value": "snack bars",
+        "label": "Snack Bars"
+    },
+    {
+        "value": "herbal tea",
+        "label": "Herbal Tea"
+    },
+    {
+        "value": "beauty supplements",
+        "label": "Beauty Supplements"
+    },
+    {
+        "value": "prescription medication",
+        "label": "Prescription Medication"
+    },
+    {
+        "value": "over-the-counter medication",
+        "label": "Over-the-Counter Medication"
+    },
+    {
+        "value": "first aid supplies",
+        "label": "First Aid Supplies"
+    },
+    {
+        "value": "medical equipment",
+        "label": "Medical Equipment"
+    },
+    {
+        "value": "diabetic supplies",
+        "label": "Diabetic Supplies"
+    },
+    {
+        "value": "industrial machinery",
+        "label": "Industrial Machinery"
+    },
+    {
+        "value": "construction equipment",
+        "label": "Construction Equipment"
+    },
+    {
+        "value": "manufacturing tools",
+        "label": "Manufacturing Tools"
+    },
+    {
+        "value": "safety equipment",
+        "label": "Safety Equipment"
+    },
+    {
+        "value": "office supplies",
+        "label": "Office Supplies"
+    },
+    {
+        "value": "paper",
+        "label": "Paper"
+    },
+    {
+        "value": "pens",
+        "label": "Pens"
+    },
+    {
+        "value": "notebooks",
+        "label": "Notebooks"
+    },
+    {
+        "value": "folders",
+        "label": "Folders"
+    },
+    {
+        "value": "stapler",
+        "label": "Stapler"
+    },
+    {
+        "value": "calculator",
+        "label": "Calculator"
+    },
+    {
+        "value": "desk organizer",
+        "label": "Desk Organizer"
+    },
+    {
+        "value": "printer ink",
+        "label": "Printer Ink"
+    },
+    {
+        "value": "envelopes",
+        "label": "Envelopes"
+    },
+    {
+        "value": "party supplies",
+        "label": "Party Supplies"
+    },
+    {
+        "value": "balloons",
+        "label": "Balloons"
+    },
+    {
+        "value": "decorations",
+        "label": "Decorations"
+    },
+    {
+        "value": "tableware",
+        "label": "Tableware"
+    },
+    {
+        "value": "gift wrap",
+        "label": "Gift Wrap"
+    },
+    {
+        "value": "food delivery",
+        "label": "Food Delivery"
+    },
+    {
+        "value": "beverages delivery",
+        "label": "Beverages Delivery"
+    },
+    {
+        "value": "grocery delivery",
+        "label": "Grocery Delivery"
+    },
+    {
+        "value": "restaurant delivery",
+        "label": "Restaurant Delivery"
+    },
+    {
+        "value": "flower delivery",
+        "label": "Flower Delivery"
+    },
+    {
+        "value": "gift delivery",
+        "label": "Gift Delivery"
+    },
+    {
+        "value": "fashion accessories",
+        "label": "Fashion Accessories"
+    },
+    {
+        "value": "scarves",
+        "label": "Scarves"
+    },
+    {
+        "value": "belts",
+        "label": "Belts"
+    },
+    {
+        "value": "sunglasses",
+        "label": "Sunglasses"
+    },
+    {
+        "value": "watches",
+        "label": "Watches"
+    },
+    {
+        "value": "jewelry",
+        "label": "Jewelry"
+    },
+    {
+        "value": "hats",
+        "label": "Hats"
+    },
+    {
+        "value": "wallets",
+        "label": "Wallets"
+    },
+    {
+        "value": "handbags",
+        "label": "Handbags"
+    },
+    {
+        "value": "socks",
+        "label": "Socks"
+    },
+    {
+        "value": "underwear",
+        "label": "Underwear"
+    },
+    {
+        "value": "swimwear",
+        "label": "Swimwear"
+    },
+    {
+        "value": "nightwear",
+        "label": "Nightwear"
+    },
+    {
+        "value": "lingerie",
+        "label": "Lingerie"
+    },
+    {
+        "value": "sneakers",
+        "label": "Sneakers"
+    },
+    {
+        "value": "sandals",
+        "label": "Sandals"
+    },
+    {
+        "value": "boots",
+        "label": "Boots"
+    },
+    {
+        "value": "flats",
+        "label": "Flats"
+    },
+    {
+        "value": "heels",
+        "label": "Heels"
+    },
+    {
+        "value": "backpacks",
+        "label": "Backpacks"
+    },
+    {
+        "value": "suitcases",
+        "label": "Suitcases"
+    },
+    {
+        "value": "travel bags",
+        "label": "Travel Bags"
+    },
+    {
+        "value": "duffel bags",
+        "label": "Duffel Bags"
+    },
+    {
+        "value": "shoulder bags",
+        "label": "Shoulder Bags"
+    },
+    {
+        "value": "laptop bags",
+        "label": "Laptop Bags"
+    },
+    {
+        "value": "tote bags",
+        "label": "Tote Bags"
+    },
+    {
+        "value": "briefcases",
+        "label": "Briefcases"
+    },
+    {
+        "value": "clutches",
+        "label": "Clutches"
+    },
+    {
+        "value": "wallets and cardholders",
+        "label": "Wallets and Cardholders"
+    },
+    {
+        "value": "keychains",
+        "label": "Keychains"
+    },
+    {
+        "value": "hair accessories",
+        "label": "Hair Accessories"
+    },
+    {
+        "value": "umbrellas",
+        "label": "Umbrellas"
+    },
+    {
+        "value": "gloves",
+        "label": "Gloves"
+    },
+    {
+        "value": "safety masks",
+        "label": "Safety Masks"
+    },
+    {
+        "value": "sunglasses",
+        "label": "Sunglasses"
+    },
+    {
+        "value": "Apple",
+        "label": "Apple"
+    },
+    {
+        "value": "Samsung",
+        "label": "Samsung"
+    },
+    {
+        "value": "Sony",
+        "label": "Sony"
+    },
+    {
+        "value": "LG",
+        "label": "LG"
+    },
+    {
+        "value": "HP",
+        "label": "HP"
+    },
+    {
+        "value": "Dell",
+        "label": "Dell"
+    },
+    {
+        "value": "Lenovo",
+        "label": "Lenovo"
+    },
+    {
+        "value": "Canon",
+        "label": "Canon"
+    },
+    {
+        "value": "Nikon",
+        "label": "Nikon"
+    },
+    {
+        "value": "Sony",
+        "label": "Sony"
+    },
+    {
+        "value": "Bose",
+        "label": "Bose"
+    },
+    {
+        "value": "JBL",
+        "label": "JBL"
+    },
+    {
+        "value": "Philips",
+        "label": "Philips"
+    },
+    {
+        "value": "Panasonic",
+        "label": "Panasonic"
+    },
+    {
+        "value": "Mi",
+        "label": "Mi"
+    },
+    {
+        "value": "OnePlus",
+        "label": "OnePlus"
+    },
+    {
+        "value": "Realme",
+        "label": "Realme"
+    },
+    {
+        "value": "Puma",
+        "label": "Puma"
+    },
+    {
+        "value": "Nike",
+        "label": "Nike"
+    },
+    {
+        "value": "Adidas",
+        "label": "Adidas"
+    },
+    {
+        "value": "Levi's",
+        "label": "Levi's"
+    },
+    {
+        "value": "Wrangler",
+        "label": "Wrangler"
+    },
+    {
+        "value": "UCB",
+        "label": "UCB"
+    },
+    {
+        "value": "Biba",
+        "label": "Biba"
+    },
+    {
+        "value": "W",
+        "label": "W"
+    },
+    {
+        "value": "Allen Solly",
+        "label": "Allen Solly"
+    },
+    {
+        "value": "Van Heusen",
+        "label": "Van Heusen"
+    },
+    {
+        "value": "Arrow",
+        "label": "Arrow"
+    },
+    {
+        "value": "Fossil",
+        "label": "Fossil"
+    },
+    {
+        "value": "Casio",
+        "label": "Casio"
+    },
+    {
+        "value": "Timex",
+        "label": "Timex"
+    },
+    {
+        "value": "Tissot",
+        "label": "Tissot"
+    },
+    {
+        "value": "Titan",
+        "label": "Titan"
+    },
+    {
+        "value": "Ray-Ban",
+        "label": "Ray-Ban"
+    },
+    {
+        "value": "Oakley",
+        "label": "Oakley"
+    },
+    {
+        "value": "Fastrack",
+        "label": "Fastrack"
+    },
+    {
+        "value": "American Tourister",
+        "label": "American Tourister"
+    },
+    {
+        "value": "Skybags",
+        "label": "Skybags"
+    },
+    {
+        "value": "Wildcraft",
+        "label": "Wildcraft"
+    },
+    {
+        "value": "Safari",
+        "label": "Safari"
+    },
+    {
+        "value": "Lakme",
+        "label": "Lakme"
+    },
+    {
+        "value": "Maybelline",
+        "label": "Maybelline"
+    },
+    {
+        "value": "L'Oreal Paris",
+        "label": "L'Oreal Paris"
+    },
+    {
+        "value": "Revlon",
+        "label": "Revlon"
+    },
+    {
+        "value": "Lotus Herbals",
+        "label": "Lotus Herbals"
+    },
+    {
+        "value": "Himalaya",
+        "label": "Himalaya"
+    },
+    {
+        "value": "Dabur",
+        "label": "Dabur"
+    },
+    {
+        "value": "Patanjali",
+        "label": "Patanjali"
+    },
+    {
+        "value": "Amul",
+        "label": "Amul"
+    },
+    {
+        "value": "Kellogg's",
+        "label": "Kellogg's"
+    },
+    {
+        "value": "Nestle",
+        "label": "Nestle"
+    },
+    {
+        "value": "Cadbury",
+        "label": "Cadbury"
+    },
+    {
+        "value": "Parle",
+        "label": "Parle"
+    },
+    {
+        "value": "Tata",
+        "label": "Tata"
+    },
+    {
+        "value": "Bajaj",
+        "label": "Bajaj"
+    },
+    {
+        "value": "Voltas",
+        "label": "Voltas"
+    },
+    {
+        "value": "LG",
+        "label": "LG"
+    },
+    {
+        "value": "Samsung",
+        "label": "Samsung"
+    },
+    {
+        "value": "Sony",
+        "label": "Sony"
+    },
+    {
+        "value": "Philips",
+        "label": "Philips"
+    },
+    {
+        "value": "Whirlpool",
+        "label": "Whirlpool"
+    },
+    {
+        "value": "Haier",
+        "label": "Haier"
+    },
+    {
+        "value": "Godrej",
+        "label": "Godrej"
+    },
+    {
+        "value": "Kent",
+        "label": "Kent"
+    },
+    {
+        "value": "Livpure",
+        "label": "Livpure"
+    },
+    {
+        "value": "Aquaguard",
+        "label": "Aquaguard"
+    },
+    {
+        "value": "Eureka Forbes",
+        "label": "Eureka Forbes"
+    },
+    {
+        "value": "Havells",
+        "label": "Havells"
+    },
+    {
+        "value": "Syska",
+        "label": "Syska"
+    },
+    {
+        "value": "Boat",
+        "label": "Boat"
+    },
+    {
+        "value": "JBL",
+        "label": "JBL"
+    },
+    {
+        "value": "Sony",
+        "label": "Sony"
+    },
+    {
+        "value": "LG",
+        "label": "LG"
+    },
+    {
+        "value": "Samsung",
+        "label": "Samsung"
+    },
+    {
+        "value": "Panasonic",
+        "label": "Panasonic"
+    },
+    {
+        "value": "Mi",
+        "label": "Mi"
+    },
+    {
+        "value": "OnePlus",
+        "label": "OnePlus"
+    },
+    {
+        "value": "Vivo",
+        "label": "Vivo"
+    },
+    {
+        "value": "Oppo",
+        "label": "Oppo"
+    },
+    {
+        "value": "Realme",
+        "label": "Realme"
+    },
+    {
+        "value": "Motorola",
+        "label": "Motorola"
+    },
+    {
+        "value": "Nokia",
+        "label": "Nokia"
+    },
+    {
+        "value": "Redmi",
+        "label": "Redmi"
+    },
+    {
+        "value": "Honor",
+        "label": "Honor"
+    },
+    {
+        "value": "Asus",
+        "label": "Asus"
+    },
+    {
+        "value": "HP",
+        "label": "HP"
+    },
+    {
+        "value": "Dell",
+        "label": "Dell"
+    },
+    {
+        "value": "Lenovo",
+        "label": "Lenovo"
+    },
+    {
+        "value": "Acer",
+        "label": "Acer"
+    },
+    {
+        "value": "Apple",
+        "label": "Apple"
+    },
+    {
+        "value": "Microsoft",
+        "label": "Microsoft"
+    },
+    {
+        "value": "Huawei",
+        "label": "Huawei"
+    },
+    {
+        "value": "Xiaomi",
+        "label": "Xiaomi"
+    },
+    {
+        "value": "GoPro",
+        "label": "GoPro"
+    },
+    {
+        "value": "Canon",
+        "label": "Canon"
+    },
+    {
+        "value": "Nikon",
+        "label": "Nikon"
+    },
+    {
+        "value": "Sony",
+        "label": "Sony"
+    },
+    {
+        "value": "Fujifilm",
+        "label": "Fujifilm"
+    },
+    {
+        "value": "Olympus",
+        "label": "Olympus"
+    },
+    {
+        "value": "Pentax",
+        "label": "Pentax"
+    },
+    {
+        "value": "Tamron",
+        "label": "Tamron"
+    },
+    {
+        "value": "Sigma",
+        "label": "Sigma"
+    },
+    {
+        "value": "Zeiss",
+        "label": "Zeiss"
+    },
+    {
+        "value": "Bose",
+        "label": "Bose"
+    },
+    {
+        "value": "JBL",
+        "label": "JBL"
+    },
+    {
+        "value": "Sony",
+        "label": "Sony"
+    },
+    {
+        "value": "Sennheiser",
+        "label": "Sennheiser"
+    },
+    {
+        "value": "Skullcandy",
+        "label": "Skullcandy"
+    },
+    {
+        "value": "Audio-Technica",
+        "label": "Audio-Technica"
+    },
+    {
+        "value": "Beats",
+        "label": "Beats"
+    },
+    {
+        "value": "Plantronics",
+        "label": "Plantronics"
+    },
+    {
+        "value": "SteelSeries",
+        "label": "SteelSeries"
+    },
+    {
+        "value": "Logitech",
+        "label": "Logitech"
+    },
+    {
+        "value": "Corsair",
+        "label": "Corsair"
+    },
+    {
+        "value": "Razer",
+        "label": "Razer"
+    },
+    {
+        "value": "HyperX",
+        "label": "HyperX"
+    },
+    {
+        "value": "BenQ",
+        "label": "BenQ"
+    },
+    {
+        "value": "LG",
+        "label": "LG"
+    },
+    {
+        "value": "Samsung",
+        "label": "Samsung"
+    },
+    {
+        "value": "Sony",
+        "label": "Sony"
+    },
+    {
+        "value": "Philips",
+        "label": "Philips"
+    },
+    {
+        "value": "TCL",
+        "label": "TCL"
+    },
+    {
+        "value": "Mi",
+        "label": "Mi"
+    },
+    {
+        "value": "OnePlus",
+        "label": "OnePlus"
+    },
+    {
+        "value": "VU",
+        "label": "VU"
+    },
+    {
+        "value": "Sanyo",
+        "label": "Sanyo"
+    },
+    {
+        "value": "Thomson",
+        "label": "Thomson"
+    },
+    {
+        "value": "Panasonic",
+        "label": "Panasonic"
+    },
+    {
+        "value": "Onida",
+        "label": "Onida"
+    },
+    {
+        "value": "Lloyd",
+        "label": "Lloyd"
+    },
+    {
+        "value": "Sony",
+        "label": "Sony"
+    },
+    {
+        "value": "Philips",
+        "label": "Philips"
+    },
+    {
+        "value": "Bajaj",
+        "label": "Bajaj"
+    },
+    {
+        "value": "V-Guard",
+        "label": "V-Guard"
+    },
+    {
+        "value": "Crompton",
+        "label": "Crompton"
+    },
+    {
+        "value": "Havells",
+        "label": "Havells"
+    },
+    {
+        "value": "Syska",
+        "label": "Syska"
+    },
+    {
+        "value": "Eveready",
+        "label": "Eveready"
+    },
+    {
+        "value": "Duracell",
+        "label": "Duracell"
+    },
+    {
+        "value": "Panasonic",
+        "label": "Panasonic"
+    },
+    {
+        "value": "LG",
+        "label": "LG"
+    },
+    {
+        "value": "Samsung",
+        "label": "Samsung"
+    },
+    {
+        "value": "Sony",
+        "label": "Sony"
+    },
+    {
+        "value": "Toshiba",
+        "label": "Toshiba"
+    },
+    {
+        "value": "Mi",
+        "label": "Mi"
+    },
+    {
+        "value": "Onida",
+        "label": "Onida"
+    },
+    {
+        "value": "Philips",
+        "label": "Philips"
+    },
+    {
+        "value": "Hitachi",
+        "label": "Hitachi"
+    },
+    {
+        "value": "Whirlpool",
+        "label": "Whirlpool"
+    },
+    {
+        "value": "Godrej",
+        "label": "Godrej"
+    },
+    {
+        "value": "Haier",
+        "label": "Haier"
+    },
+    {
+        "value": "Voltas",
+        "label": "Voltas"
+    },
+    {
+        "value": "LG",
+        "label": "LG"
+    },
+    {
+        "value": "Samsung",
+        "label": "Samsung"
+    },
+    {
+        "value": "Sony",
+        "label": "Sony"
+    },
+    {
+        "value": "Philips",
+        "label": "Philips"
+    },
+    {
+        "value": "Bajaj",
+        "label": "Bajaj"
+    },
+    {
+        "value": "Havells",
+        "label": "Havells"
+    },
+    {
+        "value": "Panasonic",
+        "label": "Panasonic"
+    },
+    {
+        "value": "Kent",
+        "label": "Kent"
+    },
+    {
+        "value": "Livpure",
+        "label": "Livpure"
+    },
+    {
+        "value": "Aquaguard",
+        "label": "Aquaguard"
+    },
+    {
+        "value": "Eureka Forbes",
+        "label": "Eureka Forbes"
+    },
+    {
+        "value": "Hindware",
+        "label": "Hindware"
+    },
+    {
+        "value": "Cera",
+        "label": "Cera"
+    },
+    {
+        "value": "Parryware",
+        "label": "Parryware"
+    },
+    {
+        "value": "Jaquar",
+        "label": "Jaquar"
+    },
+    {
+        "value": "Kohler",
+        "label": "Kohler"
+    },
+    {
+        "value": "Symphony",
+        "label": "Symphony"
+    },
+    {
+        "value": "Usha",
+        "label": "Usha"
+    },
+    {
+        "value": "Orient",
+        "label": "Orient"
+    },
+    {
+        "value": "Bajaj",
+        "label": "Bajaj"
+    },
+    {
+        "value": "Morphy Richards",
+        "label": "Morphy Richards"
+    },
+    {
+        "value": "Prestige",
+        "label": "Prestige"
+    },
+    {
+        "value": "Philips",
+        "label": "Philips"
+    },
+    {
+        "value": "Panasonic",
+        "label": "Panasonic"
+    },
+    {
+        "value": "LG",
+        "label": "LG"
+    },
+    {
+        "value": "Samsung",
+        "label": "Samsung"
+    },
+    {
+        "value": "Whirlpool",
+        "label": "Whirlpool"
+    },
+    {
+        "value": "Godrej",
+        "label": "Godrej"
+    },
+    {
+        "value": "Haier",
+        "label": "Haier"
+    },
+    {
+        "value": "Bosch",
+        "label": "Bosch"
+    },
+    {
+        "value": "IFB",
+        "label": "IFB"
+    },
+    {
+        "value": "LG",
+        "label": "LG"
+    },
+    {
+        "value": "Samsung",
+        "label": "Samsung"
+    },
+    {
+        "value": "Sony",
+        "label": "Sony"
+    },
+    {
+        "value": "Philips",
+        "label": "Philips"
+    },
+    {
+        "value": "Mi",
+        "label": "Mi"
+    },
+    {
+        "value": "OnePlus",
+        "label": "OnePlus"
+    },
+    {
+        "value": "Panasonic",
+        "label": "Panasonic"
+    },
+    {
+        "value": "Sony",
+        "label": "Sony"
+    },
+    {
+        "value": "LG",
+        "label": "LG"
+    },
+    {
+        "value": "Samsung",
+        "label": "Samsung"
+    },
+    {
+        "value": "Whirlpool",
+        "label": "Whirlpool"
+    },
+    {
+        "value": "Voltas",
+        "label": "Voltas"
+    },
+    {
+        "value": "Hitachi",
+        "label": "Hitachi"
+    },
+    {
+        "value": "Daikin",
+        "label": "Daikin"
+    },
+    {
+        "value": "Carrier",
+        "label": "Carrier"
+    },
+    {
+        "value": "Blue Star",
+        "label": "Blue Star"
+    },
+    {
+        "value": "Sharp",
+        "label": "Sharp"
+    },
+    {
+        "value": "Godrej",
+        "label": "Godrej"
+    },
+    {
+        "value": "Kenstar",
+        "label": "Kenstar"
+    },
+    {
+        "value": "LG",
+        "label": "LG"
+    },
+    {
+        "value": "Samsung",
+        "label": "Samsung"
+    },
+    {
+        "value": "Sony",
+        "label": "Sony"
+    },
+    {
+        "value": "Panasonic",
+        "label": "Panasonic"
+    },
+    {
+        "value": "Mi",
+        "label": "Mi"
+    },
+    {
+        "value": "OnePlus",
+        "label": "OnePlus"
+    },
+    {
+        "value": "Philips",
+        "label": "Philips"
+    },
+    {
+        "value": "Sony",
+        "label": "Sony"
+    },
+    {
+        "value": "JBL",
+        "label": "JBL"
+    },
+    {
+        "value": "Bose",
+        "label": "Bose"
+    },
+    {
+        "value": "Harman Kardon",
+        "label": "Harman Kardon"
+    },
+    {
+        "value": "Yamaha",
+        "label": "Yamaha"
+    },
+    {
+        "value": "Denon",
+        "label": "Denon"
+    },
+    {
+        "value": "Onkyo",
+        "label": "Onkyo"
+    },
+    {
+        "value": "Marantz",
+        "label": "Marantz"
+    },
+    {
+        "value": "Pioneer",
+        "label": "Pioneer"
+    },
+    {
+        "value": "Sonos",
+        "label": "Sonos"
+    },
+    {
+        "value": "Q Acoustics",
+        "label": "Q Acoustics"
+    },
+    {
+        "value": "Klipsch",
+        "label": "Klipsch"
+    }
+]

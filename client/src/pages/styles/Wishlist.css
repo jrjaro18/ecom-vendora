@@ -1,7 +1,7 @@
-.cartpagebody{
+.wishlistpagebody{
     background-image:linear-gradient(90deg, rgba(247, 247, 220, 0.705),rgba(243, 192, 192, 0.674))
 }
-.cartpageheader, .iconcart{
+.wishlistpageheader{
     padding-left:1vw;
     font-family: 'Poppins', sans-serif;
     font-size: 3vmax;
@@ -10,10 +10,10 @@
     gap: 1rem;
     border-bottom: 1px solid black;
 }
-.cartpagecontainer{
-    min-height: 80vh;
+.wishlistpagecontainer{
+    min-height: 100vh;
 }
-.cartpagegrid{
+.wishlistpagegrid{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-row-gap: 10px;
@@ -23,13 +23,13 @@
     padding-right: 1vw;
     min-height: auto;
 }
-.cartpageitemdiv{
+.wishlistpageitemdiv{
     display: flex;
     flex-direction: column;
     gap:0.5rem;
     justify-content: space-between;
 }
-.cartpagecheckout{
+.wishlistpagecheckout{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -37,14 +37,13 @@
     padding-left: 1vw;
     padding-right: 1vw;
 }
-.cartpagecheckoutprice{
+.wishlistpagecheckoutprice{
     font-size: 1.5rem;
     font-family: 'Poppins', sans-serif;
 }
 
 @media screen and (max-width: 768px) {
-    .cartpagegrid{
+    .wishlistpagegrid{
         grid-template-columns: 1fr 1fr;
     }
-
 }

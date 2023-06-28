@@ -4,7 +4,7 @@ require('dotenv').config();
 const jwtVerify = (req, res, next) => {
   const token = req.cookies.token;
   if (!token) {
-    console.log("error1");
+    console.log("No token");
     //statuses were 404
     return res.status(288).send('Access denied. No token provided.');
   }
@@ -14,7 +14,7 @@ const jwtVerify = (req, res, next) => {
     req.user = decoded.user;
     next();
   } catch (error) {
-    console.log(error);
+    console.log("Useless token");
     res.clearCookie('token');
     return res.status(288).send('Invalid token.');
   }

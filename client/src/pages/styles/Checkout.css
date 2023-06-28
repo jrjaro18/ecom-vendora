@@ -1,0 +1,79 @@
+.checkoutbody {
+    background-image: url("https://wallpapercave.com/wp/wp2757874.gif");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position:center;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.checkoutcontainer {
+    position: absolute;
+    background-color: rgba(219, 209, 209, 0.5);
+    background-image: linear-gradient(90deg, #38343406 0%, #eb3d0d0c 100%);
+    width: 50%;
+    padding: 2%;
+    margin-top: 13vh;
+    border-radius:1em;
+}
+
+.checkoutformheader {
+    text-align: center;
+    font-size: 2rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: #fff;
+    text-shadow: 0 0 20px #fff;
+    margin-bottom: 2vh;
+}
+
+.pincode input[type=number]::-webkit-inner-spin-button, 
+.pincode input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+.checkoutform{
+    display: flex;
+    flex-direction: column;
+    gap:2vh;
+}
+.statepin{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap:2vw;
+}
+
+.orderDetails{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+}
+.orderprice{
+    font-size: 2rem;
+    font-weight: 600;
+    color: #ffffff;
+    text-shadow: 0 0 20px #fff;
+}
+.checkoutbtn{
+    width: 40%;
+    background-color: #59e81c;
+    box-shadow: 0 0 20px #41eb0d;
+}
+.checkoutbtn:hover{
+    background-color: #53d31c;
+    box-shadow: 0 0 20px #3ce00a;
+}
+@media screen and (max-width:780px) {
+    .checkoutcontainer{
+        width: 80%;
+    }
+    .checkoutbtn{
+        width: 60%;
+
+    }
+}
