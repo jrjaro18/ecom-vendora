@@ -47,3 +47,4 @@ const jwtVerify = require('./middlewares/verifyjwt');
 app.get("/api/check/authorized", jwtVerify, (req, res) => {
   res.send("authorized");
 })
+

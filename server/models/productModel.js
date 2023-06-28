@@ -46,6 +46,7 @@ const productSchema = new Schema({
 
     buyers: [{
         type: mongoose.Schema.Types.ObjectId,
+        default: [],
     }],
     reviews: [{
         userId: {

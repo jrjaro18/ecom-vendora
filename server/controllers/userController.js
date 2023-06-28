@@ -2,6 +2,10 @@ const User = require('../models/userModel');
 const Product = require('../models/productModel');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const Razorpay = require('razorpay');
+const crypto = require('crypto');
+const mongoose = require('mongoose');
+
 require('dotenv').config();
 exports.register = async (req, res) => {
     const { firstname, lastname, password, email, dob, gender } = req.body;
@@ -193,12 +197,12 @@ exports.getCart = async (req, res) => {
         var userCartPrice = 0;
         if (user) {
             for (let i = 0; i < user.cart.length; i++) {
-                const product = await Product.findById(user.cart[i],{description:0, reviews:0, buyers:0, __v:0});
+                const product = await Product.findById(user.cart[i], { description: 0, reviews: 0, buyers: 0, __v: 0 });
                 cart.push(product);
                 userCartPrice += product.price;
             }
-            console.log(cart);
-            return res.status(200).send({cart: cart, userCartPrice: userCartPrice, userDetails: req.user});
+            //console.log(cart);
+            return res.status(200).send({ cart: cart, userCartPrice: userCartPrice, userDetails: req.user });
         }
     } catch (err) {
         console.log(err);
@@ -206,19 +210,19 @@ exports.getCart = async (req, res) => {
     }
 }
 
-exports.getWishlist= async (req, res) => {
+exports.getWishlist = async (req, res) => {
     try {
         const user = await User.findOne({ _id: req.user._id }, { wishlist: 1 });
         var wishlist = [];
         var userWishlistPrice = 0;
         if (user) {
             for (let i = 0; i < user.wishlist.length; i++) {
-                const product = await Product.findById(user.wishlist[i],{description:0, reviews:0, buyers:0, __v:0});
+                const product = await Product.findById(user.wishlist[i], { description: 0, reviews: 0, buyers: 0, __v: 0 });
                 wishlist.push(product);
                 userWishlistPrice += product.price;
             }
-            console.log(wishlist);
-            return res.status(200).send({wishlist: wishlist, userWishlistPrice: userWishlistPrice});
+            //console.log(wishlist);
+            return res.status(200).send({ wishlist: wishlist, userWishlistPrice: userWishlistPrice });
         }
     } catch (err) {
         console.log(err);
@@ -226,16 +230,106 @@ exports.getWishlist= async (req, res) => {
     }
 }
 
-// exports.checkout = async(req, res)=>{
-//     try{
-//         const user = await User.findOne({_id: req.user._id});
-//         if(user){
-//             user.cart = [];
-//             await user.save();
-//             return res.status(200).send("Checkout Successfull");
-//         }
-//     }catch(err){
-//         console.log(err);
-//         res.status(299).send("Internal server error");
-//     }
-// }
+exports.checkout = async (req, res) => {
+    try {
+        const razorpay = new Razorpay({
+            key_id: process.env.RAZORPAY_ID_KEY,
+            key_secret: process.env.RAZORPAY_SECRET_KEY
+        });
+        const { pincode, address, state, price } = req.body;
+
+            const user = await User.findById(req.user._id);
+            user.address = address+", "+pincode+", "+state;
+            await user.save();
+
+        var options = {
+            amount: price * 100,  // amount in the smallest currency unit
+            currency: "USD",
+            receipt: req.user._id + "-" + new Date().getTime()
+        };
+
+        const order = await razorpay.orders.create(options);
+        console.log(order);
+        return res.status(200).send({ order: order, userDetails: req.user });
+
+    } catch (err) {
+        console.log(err);
+        res.status(299).send("Internal server error");
+    }
+}
+
+exports.checkoutSuccess = async (req, res) => {
+    const { razorpay_payment_id, razorpay_order_id, razorpay_signature } = req.body;
+    const userId = req.params.id.split(':')[1].split('}')[0];
+    //console.log(userId);
+    try {
+        //verification
+        const shasum = crypto.createHmac('sha256', process.env.RAZORPAY_SECRET_KEY);
+        shasum.update(`${razorpay_order_id}|${razorpay_payment_id}`);
+        const digest = shasum.digest('hex');
+        if (digest !== razorpay_signature)
+            return res.status(400).json({ msg: "Transaction not legit!" });
+        //saving order for buyer
+        const user = await User.findById(userId);
+        const tempArr = [];
+        if (user) {
+            const userCart = user.cart;
+            for (item in userCart) {
+                tempArr.push(
+                    {
+                        productId: (userCart[item]),
+                        status: "pending",
+                        orderId: razorpay_order_id,
+                    });
+            }
+            user.consumerOrders = tempArr;
+            user.cart = [];
+            await user.save();
+            console.log("tempArr", tempArr);
+        } else {
+            return res.status(400).json({ msg: "User not found!" });
+        }
+        //saving order for seller
+        for (item in tempArr){
+            const product = await Product.findById(tempArr[item].productId);
+            product.buyers.push((userId));
+            product.stock = product.stock - 1;
+            await product.save();
+            const sellerId = product.sellerId;
+            const user = await User.findById(sellerId);
+            user.sellerOrders.push({
+                productId: (tempArr[item].productId),
+                status: "pending",
+                orderId: razorpay_order_id,
+                buyerId: (userId),
+            })
+            await user.save();
+        }
+        res.status(200).redirect("http://localhost:3000/");
+    }
+    catch (err) {
+        console.log(err);
+        res.status(299).send("Internal server error");
+    }
+}
+
+exports.productsBought = async (req, res) => {
+    const userId = req.user._id;
+    try {
+        const products = await Product.find({ buyers: userId }, { description: 0, reviews: 0, buyers: 0, __v: 0 });
+        res.status(200).send({ products: products });
+    } catch (err) {
+        console.log(err);
+        res.status(299).send("Internal server error");
+    }
+}
+exports.productsSold = async (req, res) => {
+    const userId = req.user._id;
+    try {
+        const products = await Product.find({ sellerId: userId }, { description: 0, reviews: 0, __v: 0 });
+        res.status(200).send({ products: products });
+    } catch (err) {
+        console.log(err);
+        res.status(299).send("Internal server error");
+    }
+}

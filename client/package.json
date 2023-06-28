@@ -20,6 +20,7 @@
     "react-dom": "^18.2.0",
     "react-dropzone": "^14.2.3",
     "react-quill": "^2.0.0",
+    "react-razorpay": "^1.2.0",
     "react-router-dom": "^6.13.0",
     "react-scripts": "5.0.1",
     "react-select": "^5.7.3",

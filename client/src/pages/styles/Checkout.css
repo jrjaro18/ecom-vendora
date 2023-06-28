@@ -61,12 +61,12 @@
 }
 .checkoutbtn{
     width: 40%;
-    background-color: #59e81c;
-    box-shadow: 0 0 20px #41eb0d;
+    background-color: #42b311;
+    box-shadow: 0 0 15px #35be0b;
 }
 .checkoutbtn:hover{
-    background-color: #53d31c;
-    box-shadow: 0 0 20px #3ce00a;
+    background-color: #70ec3b;
+    box-shadow: 0 0 30px #4cda21;
 }
 @media screen and (max-width:780px) {
     .checkoutcontainer{

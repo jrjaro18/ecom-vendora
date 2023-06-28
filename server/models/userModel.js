@@ -36,14 +36,23 @@ const User = new Schema({
         },
         status:{
             type: String,
+        },
+        orderId:{
+            type:String
         }
     }],
     sellerOrders: [{
         productId:{
             type: mongoose.Schema.Types.ObjectId,
         },
+        buyerId:{
+            type: mongoose.Schema.Types.ObjectId,
+        },
         status:{
             type: String,
+        },
+        orderId:{
+            type:String
         }
     }],
     address: {
