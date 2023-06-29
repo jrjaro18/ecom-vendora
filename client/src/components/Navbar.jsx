@@ -33,8 +33,9 @@ const Navbar = () => {
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
     const handleLogout = async () => {
-        localStorage.removeItem("userDetails");
+        
         try {
+            localStorage.removeItem("userDetails");
             const res = await axios.post('http://localhost:5000/api/user/logout', {}, { withCredentials: true });
             console.log(res);
 

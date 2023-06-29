@@ -4,7 +4,7 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const Razorpay = require('razorpay');
 const crypto = require('crypto');
-const mongoose = require('mongoose');
+const nodemailer = require('nodemailer')
 
 require('dotenv').config();
 exports.register = async (req, res) => {
@@ -96,6 +96,7 @@ exports.googlelogin = async (req, res) => {
 
 exports.logout = async (req, res) => {
     res.clearCookie('token');
+    console.log("User logged out successfully");
     return res.status(200).send("User logged out successfully");
 }
 
@@ -238,9 +239,9 @@ exports.checkout = async (req, res) => {
         });
         const { pincode, address, state, price } = req.body;
 
-            const user = await User.findById(req.user._id);
-            user.address = address+", "+pincode+", "+state;
-            await user.save();
+        const user = await User.findById(req.user._id);
+        user.address = address + ", " + pincode + ", " + state;
+        await user.save();
 
         var options = {
             amount: price * 100,  // amount in the smallest currency unit
@@ -261,14 +262,65 @@ exports.checkout = async (req, res) => {
 exports.checkoutSuccess = async (req, res) => {
     const { razorpay_payment_id, razorpay_order_id, razorpay_signature } = req.body;
     const userId = req.params.id.split(':')[1].split('}')[0];
-    //console.log(userId);
+    var buyerName = req.user.firstname + " " + req.user.lastname;
+    const transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+            user: process.env.EMAIL_ID,
+            pass: process.env.EMAIL_PASSWORD
+        },
+        tls: {
+            rejectUnauthorized: false
+        }
+    });
+
+    var userMail = {
+        email: req.user.email,
+        products: [],
+        address: "",
+        price: 0,
+        orderId: razorpay_order_id,
+    }
+
+    var sellerMail = [
+        //{
+        // name: req.user.firstname+" "+req.user.lastname,
+        // email: "",
+        // products: [],
+        // address: "",
+        // price: 0,
+        // orderId: razorpay_order_id,
+        //}
+    ];
+
+    const findSeller = async (sM, buyerName, sellerEmail, product, address, price, orderId) => {
+        let i = 0;
+        for (i = 0; i < sM.length; i++) {
+            if (sM[i].email === sellerEmail) {
+                sM[i].products.push(" "+product);
+                sM[i].price += price;
+                return;
+            }
+        }
+        sM.push({
+            name: buyerName,
+            email: sellerEmail,
+            products: [" "+ product],
+            address: address,
+            price: price,
+            orderId: orderId,
+        });
+        return;
+    }
+
+
     try {
-        //verification
+        //checking signature
         const shasum = crypto.createHmac('sha256', process.env.RAZORPAY_SECRET_KEY);
         shasum.update(`${razorpay_order_id}|${razorpay_payment_id}`);
         const digest = shasum.digest('hex');
-        if (digest !== razorpay_signature)
-            return res.status(400).json({ msg: "Transaction not legit!" });
+        if (digest !== razorpay_signature) return res.status(400).json({ msg: "Transaction not legit!" });
+
         //saving order for buyer
         const user = await User.findById(userId);
         const tempArr = [];
@@ -282,6 +334,7 @@ exports.checkoutSuccess = async (req, res) => {
                         orderId: razorpay_order_id,
                     });
             }
+            userMail.address = user.address;
             user.consumerOrders = tempArr;
             user.cart = [];
             await user.save();
@@ -290,21 +343,194 @@ exports.checkoutSuccess = async (req, res) => {
             return res.status(400).json({ msg: "User not found!" });
         }
         //saving order for seller
-        for (item in tempArr){
+        for (item in tempArr) {
             const product = await Product.findById(tempArr[item].productId);
             product.buyers.push((userId));
             product.stock = product.stock - 1;
-            await product.save();
+
+            userMail.products.push(" "+item+1 + ". " + product.title);
+            userMail.price += product.price;
+
             const sellerId = product.sellerId;
             const user = await User.findById(sellerId);
+            sellerMail.email = user.email;
+
             user.sellerOrders.push({
                 productId: (tempArr[item].productId),
                 status: "pending",
                 orderId: razorpay_order_id,
                 buyerId: (userId),
-            })
+            });
+
+            findSeller(sellerMail, buyerName, user.email, product.title, userMail.address, product.price, razorpay_order_id);
+
+            await product.save();
             await user.save();
         }
+
+        let mailOptionsBuyer = {
+            from: process.env.EMAIL_ID,
+            to: userMail.email,
+            subject: 'Order Placed',
+            html: `
+            <html>
+              <head>
+                <style>
+                  body {
+                    font-family: Arial, sans-serif;
+                    background-color: #f7f7f7;
+                    color: #333;
+                  }
+                  .container {
+                    max-width: 600px;
+                    margin: 0 auto;
+                    padding: 20px;
+                    background-color: #fff;
+                  }
+                  .header {
+                    text-align: center;
+                    margin-bottom: 20px;
+                  }
+                  .header h1 {
+                    color: #ff6600;
+                  }
+                  .content {
+                    margin-bottom: 20px;
+                  }
+                  .summary {
+                    background-color: #f7f7f7;
+                    padding: 10px;
+                  }
+                  .summary h2 {
+                    color: #ff6600;
+                    margin-bottom: 10px;
+                  }
+                  .summary h4 {
+                    margin-bottom: 5px;
+                  }
+                  .footer {
+                    text-align: center;
+                  }
+                </style>
+              </head>
+              <body>
+                <div class="container">
+                  <div class="header">
+                    <h1>Message for Order Confirmation</h1>
+                  </div>
+                  <div class="content">
+                    <p>Your order has been successfully confirmed and sent to the seller.</p>
+                    <h2>Order Summary:</h2>
+                  </div>
+                  <div class="summary">
+                    <h4>Product Name:${userMail.products}</h4>
+                    <h4>Total Price: $${userMail.price}</h4>
+                    <h4>Total Items Placed for Order: ${userMail.products.length}</h4>
+                    <h4>Shipping Address: ${userMail.address}</h4>
+                    <h4>Order ID: ${userMail.orderId}</h4>
+                  </div>
+                  <div class="footer">
+                    <p>Thank you for shopping with Vendora.</p>
+                  </div>
+                </div>
+              </body>
+            </html>
+          `
+        };
+
+        transporter.sendMail(mailOptionsBuyer, function (error, info) {
+            if (error) {
+                console.log(error);
+                res.status(299).send("Internal server error");
+            } else {
+                console.log("Email sent successfully");
+                res.status(200).send("Email sent");
+            }
+        });
+
+        for (let i = 0; i < sellerMail.length; i++) {
+            let mailOptionsSeller = {
+                from: process.env.EMAIL_ID,
+                to: sellerMail[i].email,
+                subject: 'New Order Placed',
+                html: `
+                <html>
+                  <head>
+                    <style>
+                      body {
+                        font-family: Arial, sans-serif;
+                        background-color: #f7f7f7;
+                        color: #333;
+                      }
+                      .container {
+                        max-width: 600px;
+                        margin: 0 auto;
+                        padding: 20px;
+                        background-color: #fff;
+                      }
+                      .header {
+                        text-align: center;
+                        margin-bottom: 20px;
+                      }
+                      .header h1 {
+                        color: #ff6600;
+                      }
+                      .content {
+                        margin-bottom: 20px;
+                      }
+                      .summary {
+                        background-color: #f7f7f7;
+                        padding: 10px;
+                      }
+                      .summary h2 {
+                        color: #ff6600;
+                        margin-bottom: 10px;
+                      }
+                      .summary h4 {
+                        margin-bottom: 5px;
+                      }
+                      .footer {
+                        text-align: center;
+                      }
+                    </style>
+                  </head>
+                  <body>
+                    <div class="container">
+                      <div class="header">
+                        <h1>Message for Order Confirmation</h1>
+                      </div>
+                      <div class="content">
+                        <h2>New Order Placed:</h2>
+                      </div>
+                      <div class="summary">
+                        <h4>Buyer Name: ${buyerName}</h4>
+                        <h4>Product Name: ${sellerMail[i].products}</h4>
+                        <h4>Total Items Placed for Order: ${sellerMail[i].products.length}</h4>
+                        <h4>Total Price: $${sellerMail[i].price}</h4>
+                        <h4>Shipping Address: ${sellerMail[i].address}</h4>
+                        <h4>Order ID: ${sellerMail[i].orderId}</h4>
+                      </div>
+                      <div class="footer">
+                        <p>Thank you for shopping with Vendora.</p>
+                      </div>
+                    </div>
+                  </body>
+                </html>
+              `
+            };
+
+            transporter.sendMail(mailOptionsSeller, function (error, info) {
+                if (error) {
+                    console.log(error);
+                    res.status(299).send("Internal server error");
+                } else {
+                    console.log("Email sent successfully");
+                    res.status(200).send("Email sent");
+                }
+            });
+        }
+
+
         res.status(200).redirect("http://localhost:3000/");
     }
     catch (err) {
@@ -343,4 +569,95 @@ exports.checkLogin = async (req, res) => {
         console.log(err);
         res.status(299).send("No User");
     }
+}
+exports.sendSampleMail = async (req, res) => {
+    const transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+            user: process.env.EMAIL_ID,
+            pass: process.env.EMAIL_PASSWORD
+        },
+        tls: {
+            rejectUnauthorized: false
+        }
+    });
+    const product = ['Product 1', 'Product 2']
+    let mailOptions = {
+        from: process.env.EMAIL_ID,
+        to: 'jrjaro2004@gmail.com',
+        subject: 'Sending Email using Node.js',
+        html: `
+        <html>
+          <head>
+            <style>
+              body {
+                font-family: Arial, sans-serif;
+                background-color: #f7f7f7;
+                color: #333;
+              }
+              .container {
+                max-width: 600px;
+                margin: 0 auto;
+                padding: 20px;
+                background-color: #fff;
+              }
+              .header {
+                text-align: center;
+                margin-bottom: 20px;
+              }
+              .header h1 {
+                color: #ff6600;
+              }
+              .content {
+                margin-bottom: 20px;
+              }
+              .summary {
+                background-color: #f7f7f7;
+                padding: 10px;
+              }
+              .summary h2 {
+                color: #ff6600;
+                margin-bottom: 10px;
+              }
+              .summary h4 {
+                margin-bottom: 5px;
+              }
+              .footer {
+                text-align: center;
+              }
+            </style>
+          </head>
+          <body>
+            <div class="container">
+              <div class="header">
+                <h1>Message for Order Confirmation</h1>
+              </div>
+              <div class="content">
+                <p>Your order has been successfully confirmed and sent to the seller.</p>
+                <h2>Order Summary:</h2>
+              </div>
+              <div class="summary">
+                <h4>Product Name: ${product}</h4>
+                <h4>Total Price: $1199</h4>
+                <h4>Shipping Address: 703, Om Sai Aashirwad, Beverly Park, Mira Road(E)</h4>
+                <h4>Order ID: qw3456rty</h4>
+              </div>
+              <br />
+              <div class="footer">
+                <p>Thank you for shopping with Vendora.</p>
+              </div>
+            </div>
+          </body>
+        </html>
+      `
+    };
+    transporter.sendMail(mailOptions, function (error, info) {
+        if (error) {
+            console.log(error);
+            res.status(299).send("Internal server error");
+        } else {
+            console.log("Email sent successfully");
+            res.status(200).send("Email sent");
+        }
+    })
 }
