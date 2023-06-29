@@ -55,20 +55,20 @@ const Home = () => {
           </div>
         </div>
         <div className='homepagegridcontainer1' id='gdno1'>
-          <div className='homepagegrid1item1' style={{ marginTop: "1vh" }}>
+          <div className='homepagegrid1item1' style={{ marginTop: "1vh" }} onClick={()=>{window.location.href="/search/?=clothing"}}>
             <div className='homepagegrid1itemtitle'>
               Clothing
             </div>
             <img src="https://media.glamour.com/photos/570431bbc08406e85210502b/master/pass/fashion-2016-03-05-spring-trend-cold-shoulder-proenza-schouler-main.jpg" alt='sara' />
           </div>
-          <div className='homepagegrid1item2'>
-            <div className='homepagegrid1itemtitle'>
+          <div className='homepagegrid1item2' onClick={()=>{window.location.href="/search/?=footwear"}}>
+            <div className='homepagegrid1itemtitle' >
               Footwear
             </div>
             <img src='https://images-na.ssl-images-amazon.com/images/G/01/AMAZON_FASHION/2022/SITE_FLIPS/SPR_22/GW/DQC/DQC_APR_TBYB_W_SHOES_2x._SY232_CB624172947_.jpg' alt='footwear' />
           </div>
-          <div className='homepagegrid1item3'>
-            <div className='homepagegrid1itemtitle'>
+          <div className='homepagegrid1item3' onClick={()=>{window.location.href="/search/?=beauty%20picks"}}>
+            <div className='homepagegrid1itemtitle' >
               Beauty Picks
             </div>
             <img src='https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2020/May/Dashboard/Fuji_Dash_Beauty_2x._SY608_CB432774344_.jpg' alt='beautypicks' />
@@ -79,30 +79,30 @@ const Home = () => {
           Electronics
           </div>
           <div>
-            <AddIcon style={{cursor:"pointer", color:"white", backgroundColor:"black", borderRadius:"20px", }} className='morebutton' />
+            <AddIcon style={{cursor:"pointer", color:"white", backgroundColor:"black", borderRadius:"20px", }} className='morebutton' onClick={()=>{window.location.href="/search/?=electronics"}} />
           </div>
         </div>
         <div className='homepagegridcontainer2' id='gdno2'>
-          <div className='homepagegrid2item1'>
+          <div className='homepagegrid2item1' onClick={()=>{window.location.href="/search/?=smartwatch"}}>
             <img src="https://wallpapercave.com/wp/wp8535387.jpg" alt="smartwatch" />
             <div className='homepagegrid2itemtitle'>
               Smart Watches
             </div>
           </div>
-          <div className='homepagegrid2item2'>
-            <img src="https://th.bing.com/th/id/OIP.KOwj7MMEgc1V_9t6EQP2agHaE8?pid=ImgDet&rs=1" alt="lapptop" />
+          <div className='homepagegrid2item2' onClick={()=>{window.location.href="/search/?=laptop"}}>
+            <img src="https://th.bing.com/th/id/OIP.KOwj7MMEgc1V_9t6EQP2agHaE8?pid=ImgDet&rs=1" alt="laptop" />
             <div className='homepagegrid2itemtitle'>
               Laptops
             </div>
           </div>
-          <div className='homepagegrid2item3'>
+          <div className='homepagegrid2item3' onClick={()=>{window.location.href="/search/?=mobile"}}>
             <img src="https://fdn.gsmarena.com/imgroot/news/21/07/iphone-14-pro-titanium/-1200w5/gsmarena_001.jpg" alt="moblie" />
             <div className='homepagegrid2itemtitle'>
               Mobiles
             </div>
           </div>
-          <div className='homepagegrid2item4'>
-            <img src="https://s.yimg.com/os/creatr-uploaded-images/2020-11/7c9dc7a0-24f3-11eb-aed4-9f1ba3e2dec3" alt="ps5" />
+          <div className='homepagegrid2item4' onClick={()=>{window.location.href="/search/?=games"}}>
+            <img src="https://s.yimg.com/os/creatr-uploaded-images/2020-11/7c9dc7a0-24f3-11eb-aed4-9f1ba3e2dec3" alt="ps5"/>
             <div className='homepagegrid2itemtitle'>
               Gaming
             </div>
@@ -114,29 +114,29 @@ const Home = () => {
           Home Decor
         </div>
         <div>
-          <AddIcon sx={{cursor:"pointer", color:"white", backgroundColor:"black", borderRadius:"20px"}} className='morebutton'/>
+          <AddIcon sx={{cursor:"pointer", color:"white", backgroundColor:"black", borderRadius:"20px"}} className='morebutton' onClick={()=>{window.location.href="/search/?=home%20decor"}}/>
         </div>
         </div>
         <div className='homepagegridcontainer2' id='gdno3'>
-          <div className='homepagegrid2item1'>
+          <div className='homepagegrid2item1' onClick={()=>{window.location.href="/search/?=sofa"}}>
             <img src="https://images6.alphacoders.com/462/462284.jpg" alt="sofa" />
             <div className='homepagegrid2itemtitle'>
               Sofa
             </div>
           </div>
-          <div className='homepagegrid2item2'>
+          <div className='homepagegrid2item2' onClick={()=>{window.location.href="/search/?=prints"}}>
             <img src="https://i5.walmartimages.com/asr/44fd0df9-99fb-424b-a970-5af10e12a8d9_1.c0343b8ab57e0a39f228a29555f15dae.jpeg" alt="printe" />
             <div className='homepagegrid2itemtitle'>
               Prints
             </div>
           </div>
-          <div className='homepagegrid2item3'>
+          <div className='homepagegrid2item3' onClick={()=>{window.location.href="/search/?=vase"}}>
             <img src="https://th.bing.com/th/id/OIP.8D-ufsnltOUXA5v5WxrNxgEgDY?pid=ImgDet&rs=1" alt="vase" />
             <div className='homepagegrid2itemtitle'>
               Vase
             </div>
           </div>
-          <div className='homepagegrid2item4'>
+          <div className='homepagegrid2item4' onClick={()=>{window.location.href="/search/?=lighting"}}>
             <img src="https://images3.alphacoders.com/899/899393.jpg" alt="lightings" />
             <div className='homepagegrid2itemtitle'>
               Lighting

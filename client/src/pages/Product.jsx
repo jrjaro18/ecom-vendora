@@ -26,10 +26,11 @@ const Product = () => {
     const [inWishlist, setInWishlist] = useState(false);
     const [getReviews, setGetReviews] = useState([]);
     const [canReview, setCanReview] = useState(false);
-
+    const [stock, setStock] = useState(0);
     //form
     const [rating, setRating] = useState(0);
     const [review, setReview] = useState('');
+    
 
     useEffect(() => {
         const productId = window.location.href.split('=')[1];
@@ -43,6 +44,7 @@ const Product = () => {
                     console.log(res.data.image)
                     setProductRating(res.data.ratings);
                     setGetReviews(res.data.reviews);
+                    setStock(res.data.stock);
                     console.log(res.data)
                     setLoading(false);
 
@@ -100,7 +102,7 @@ const Product = () => {
         slidesToShow: 1,
         slidesToScroll: 1,
     };
-    const preReview = [{ name: "Rohan Jaiswal", rating: 4, comment: "Good Product, Loved it!" }, { name: "Bhoomi Jain", rating: 2, comment: "Average Product, Not worth!" }]
+    //const preReview = [{ name: "Rohan Jaiswal", rating: 4, comment: "Good Product, Loved it!" }, { name: "Bhoomi Jain", rating: 2, comment: "Average Product, Not worth!" }]
     const handleCart = async () => {
         const productId = window.location.href.split('=')[1];
         const res = await axios.post(`http://localhost:5000/api/user/alter/cart`, { productId: productId }, { withCredentials: true });
@@ -245,7 +247,7 @@ const Product = () => {
                             </div>
 
                             <div className='productpagecontainercontent1buttons'>
-                                <Button variant="contained" className='productpagecontainercontent1button1' onClick={() => { handleCart() }}>{!inCart ? (<>Add to Cart_</>) : (<>Remove from Cart_</>)}<ShoppingCart /></Button>
+                                <Button variant="contained" disabled={(stock===0)} className='productpagecontainercontent1button1' onClick={() => { handleCart() }}>{!inCart ? (<>{stock!==0?(<>Add to Cart_</>):(<>Unavailable</>)}</>) : (<>Remove from Cart_</>)}<ShoppingCart /></Button>
                                 <Button variant="contained" className='productpagecontainercontent1button2' onClick={() => { handleWishlist() }}>{!inWishlist ? (<>Add to Wishlist_</>) : (<>Remove from Wishlist_</>)}<FavoriteIcon /></Button>
                             </div>
                             <div className='productpagecontainercontent1description'>

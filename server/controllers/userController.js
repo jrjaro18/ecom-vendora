@@ -333,3 +333,14 @@ exports.productsSold = async (req, res) => {
         res.status(299).send("Internal server error");
     }
 }
+exports.checkLogin = async (req, res) => {
+    try {
+        const user = await User.findById(req.user._id);
+        if (user) {
+            return res.status(200).send({ user: user });
+        }
+    } catch (err) {
+        console.log(err);
+        res.status(299).send("No User");
+    }
+}
