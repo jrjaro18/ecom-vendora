@@ -16,17 +16,19 @@ const Home = () => {
     arrows: false,
     autoplay: true,
     autoplaySpeed: 3000,
-    speed: 1000,
+    speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    fade: true,
+    cssEase: 'linear',
   };
   const images = [
-    'https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_1119,c_limit/0e09dd09-d677-41a9-b1ac-e047d84040b7/nike-just-do-it.jpg',
-    'https://imagescdn.reebok.in/img/app/shopmedia/production/3/32--12035.jpg?w=1518.75&auto=format,compress',
-    'https://static.vecteezy.com/system/resources/previews/002/006/774/large_2x/paper-art-shopping-online-on-smartphone-and-new-buy-sale-promotion-backgroud-for-banner-market-ecommerce-free-vector.jpg',
-    'https://imagescdn.reebok.in/img/app/shopmedia/production/3/32--12172.jpg?w=1518.75&auto=format,compress',
-    'https://i.ytimg.com/vi/BzzNgSvMa8o/maxresdefault.jpg',
-    'https://www.couponcloud.in/assets/uploads/banners/Myntra.JPG',
+    '/maincarouselimg/carouselimg1.jpg',
+    '/maincarouselimg/carouselimg2.jpg',
+    '/maincarouselimg/carouselimg3.jpg',
+    '/maincarouselimg/carouselimg4.jpg',
+    '/maincarouselimg/carouselimg5.jpg',
+    '/maincarouselimg/carouselimg6.jpg',
     // Add more image URLs here
   ];
   return (
@@ -35,7 +37,7 @@ const Home = () => {
       <Searchbar />
       <div className="homecontainer">
         <div className='homepagecarousel'>
-          <Slider {...settings} style={{ backgroundColor: "black", width: "97.5vw", display: "flex", justifyContent: "center", alignItem: "center", marginLeft: "auto", marginRight: "auto", padding: "0" }}>
+          <Slider {...settings} >
             {images.map((image, index) => (
               <div key={index}>
                 <img className="homepagecarouselimage" src={image} alt={`Slide ${index}`} />
