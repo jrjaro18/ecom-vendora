@@ -11,7 +11,7 @@ require('./database');
 const app = express();
 
 const corsOptions = {
-  origin: ['https://ecom-vendora.netlify.app/','http://localhost:3000'],
+  origin: 'https://ecom-vendora.netlify.app/',
   credentials: true, // Enable sending cookies
 };
 app.use(cors(corsOptions));
