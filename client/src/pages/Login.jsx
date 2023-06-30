@@ -17,7 +17,7 @@ const Login = () => {
     useEffect(() => {
         const checkLogin = async () => {
             try {
-                const res = await axios.get('https://vendora-ecom.onrender.com/api/user/checklogin', { withCredentials: true })
+                const res = await axios.get('http://localhost:5000/api/user/checklogin', { withCredentials: true })
                 console.log(res)
                 if (res.status === 200) {
                     window.location.href = '/'
@@ -36,7 +36,7 @@ const Login = () => {
                 callback: (res) => {
                     //console.log(jwt_decode(res.credential))
                     const { given_name, family_name, email } = jwt_decode(res.credential);
-                    axios.post('https://vendora-ecom.onrender.com/api/user/googlelogin', {
+                    axios.post('http://localhost:5000/api/user/googlelogin', {
                         firstname: given_name,
                         lastname: family_name,
                         email: email
@@ -97,7 +97,7 @@ const Login = () => {
     const handleRegisterClick = async (e) => {
         e.preventDefault()
         try {
-            const res = await axios.post('https://vendora-ecom.onrender.com/api/user/login', {
+            const res = await axios.post('http://localhost:5000/api/user/login', {
                 email: email,
                 password: password
             }, { withCredentials: true })

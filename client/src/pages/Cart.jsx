@@ -12,7 +12,7 @@ const Cart = () => {
     const [price, setPrice] = useState(0)
     useEffect(() => {
         const fetchData = async () => {
-            const res = await axios.get('https://vendora-ecom.onrender.com/api/user/get/cartItems', {
+            const res = await axios.get('http://localhost:5000/api/user/get/cartItems', {
                 withCredentials: true,
             });
             if (res.status === 200) {

@@ -19,7 +19,7 @@ const Search = () => {
         const url = window.location.href;
         async function fetchData() {
             setSearchterm(url.split('=')[1]);
-            axios.get(`https://vendora-ecom.onrender.com/api/product/search/${url.split('=')[1]}`)
+            axios.get(`http://localhost:5000/api/product/search/${url.split('=')[1]}`)
                 .then((res) => {
                     setLoading(false);
                     console.log(res.data);

@@ -35,7 +35,7 @@ const Product = () => {
     useEffect(() => {
         const productId = window.location.href.split('=')[1];
         const fetchData = async () => {
-            await axios.get(`https://vendora-ecom.onrender.com/api/product/get/:${productId}`).then((res) => {
+            await axios.get(`http://localhost:5000/api/product/get/:${productId}`).then((res) => {
                 if (res.status === 200) {
                     setProductTitle(res.data.title);
                     setProductPrice(res.data.price);
@@ -68,7 +68,7 @@ const Product = () => {
         fetchData();
         const setProductState = async () => {
             try {
-                const res = await axios.get(`https://vendora-ecom.onrender.com/api/user/set/productState/forUser/:${productId}`, { withCredentials: true });
+                const res = await axios.get(`http://localhost:5000/api/user/set/productState/forUser/:${productId}`, { withCredentials: true });
                 //console.log(res);
                 if (res.status === 200) {
                     setInCart(res.data.cart);
@@ -105,7 +105,7 @@ const Product = () => {
     //const preReview = [{ name: "Rohan Jaiswal", rating: 4, comment: "Good Product, Loved it!" }, { name: "Bhoomi Jain", rating: 2, comment: "Average Product, Not worth!" }]
     const handleCart = async () => {
         const productId = window.location.href.split('=')[1];
-        const res = await axios.post(`https://vendora-ecom.onrender.com/api/user/alter/cart`, { productId: productId }, { withCredentials: true });
+        const res = await axios.post(`http://localhost:5000/api/user/alter/cart`, { productId: productId }, { withCredentials: true });
         if (res.status === 200) {
             toast.success(res.data, {
                 position: "top-center",
@@ -140,7 +140,7 @@ const Product = () => {
     }
     const handleWishlist = async () => {
         const productId = window.location.href.split('=')[1];
-        const res = await axios.post(`https://vendora-ecom.onrender.com/api/user/alter/wishlist`, { productId: productId }, { withCredentials: true });
+        const res = await axios.post(`http://localhost:5000/api/user/alter/wishlist`, { productId: productId }, { withCredentials: true });
         if (res.status === 200) {
             toast.success(res.data, {
                 position: "top-center",
@@ -178,7 +178,7 @@ const Product = () => {
         e.preventDefault();
         const productId = window.location.href.split('=')[1];
         try {
-            const res = await axios.post('https://vendora-ecom.onrender.com/api/product/add/review', {
+            const res = await axios.post('http://localhost:5000/api/product/add/review', {
                 productId: productId,
                 rating: rating,
                 review: review
@@ -223,7 +223,7 @@ const Product = () => {
                                     {productImages.map((image, index) => (
                                         <div key={index}>
                                             <div>
-                                                <img className="productpagecarouselimage" src={"https://vendora-ecom.onrender.com/uploads/" + image} alt={`Slide ${index}`} />
+                                                <img className="productpagecarouselimage" src={"http://localhost:5000/uploads/" + image} alt={`Slide ${index}`} />
                                             </div>
                                         </div>
                                     ))}

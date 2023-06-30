@@ -109,7 +109,7 @@ const Register = () => {
             gender: gend,
         }
         try {
-            const res = await axios.post('https://vendora-ecom.onrender.com/api/user/register', form);
+            const res = await axios.post('http://localhost:5000/api/user/register', form);
             //console.log(res);
             if (res.status === 202) {
                 toast.error(res.data, {

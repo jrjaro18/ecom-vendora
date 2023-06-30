@@ -22,7 +22,7 @@ const History = () => {
         if (state) {
             try {
                 const getBoughtdata = async () => {
-                    const res = await axios.get('https://vendora-ecom.onrender.com/api/user/bought', { withCredentials: true });
+                    const res = await axios.get('http://localhost:5000/api/user/bought', { withCredentials: true });
                     console.log(res.data.products);
                     if (res.status === 200) {
                         setInfo(res.data.products);
@@ -48,7 +48,7 @@ const History = () => {
         } else {
             try {
                 const getSolddata = async () => {
-                    const res = await axios.get('https://vendora-ecom.onrender.com/api/user/sold', { withCredentials: true });
+                    const res = await axios.get('http://localhost:5000/api/user/sold', { withCredentials: true });
                     console.log(res.data.products);
                     if (res.status === 200) {
                         setInfo(res.data.products);

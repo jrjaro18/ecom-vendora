@@ -35,7 +35,7 @@ const Navbar = () => {
     const handleLogout = async () => {
 
         try {
-            const res = await axios.post('https://vendora-ecom.onrender.com/api/user/logout', {}, { withCredentials: true });
+            const res = await axios.post('http/user/logout', {}, { withCredentials: true });
             localStorage.removeItem("userDetails");
             window.location.href = '/';
             console.log(res);
