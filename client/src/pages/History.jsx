@@ -22,7 +22,7 @@ const History = () => {
         if (state) {
             try {
                 const getBoughtdata = async () => {
-                    const res = await axios.get('http://localhost:5000/api/user/bought', { withCredentials: true });
+                    const res = await axios.get('https://vendora-ecom.onrender.com/api/user/bought', { withCredentials: true });
                     console.log(res.data.products);
                     if (res.status === 200) {
                         setInfo(res.data.products);
@@ -48,7 +48,7 @@ const History = () => {
         } else {
             try {
                 const getSolddata = async () => {
-                    const res = await axios.get('http://localhost:5000/api/user/sold', { withCredentials: true });
+                    const res = await axios.get('https://vendora-ecom.onrender.com/api/user/sold', { withCredentials: true });
                     console.log(res.data.products);
                     if (res.status === 200) {
                         setInfo(res.data.products);
@@ -78,25 +78,25 @@ const History = () => {
             {info ? (
                 <div className='historycontainer'>
 
-                <div className='historycont1'>
-                    <div className='historybutton'>
-                        <Stack direction="row" spacing={1} alignItems="center">
-                            <Typography style={style}>Sold</Typography>
-                            <AntSwitch defaultChecked inputProps={{ 'aria-label': 'ant design' }} onChange={(e) => { setState(e.target.checked) }} />
-                            <Typography style={style}>Bought</Typography>
-                        </Stack>
-                    </div>
-                    {
-                        !state ? (
-                            <Button variant="contained" style={{ color: "#fff", margin: "1vh 0", width: "max-content", fontSize: "2vmin" }} onClick={() => { window.location.href = "/sellers-page" }}>Add a Product</Button>
-                        ) : (<></>)
-                    }
+                    <div className='historycont1'>
+                        <div className='historybutton'>
+                            <Stack direction="row" spacing={1} alignItems="center">
+                                <Typography style={style}>Sold</Typography>
+                                <AntSwitch defaultChecked inputProps={{ 'aria-label': 'ant design' }} onChange={(e) => { setState(e.target.checked) }} />
+                                <Typography style={style}>Bought</Typography>
+                            </Stack>
+                        </div>
+                        {
+                            !state ? (
+                                <Button variant="contained" style={{ color: "#fff", margin: "1vh 0", width: "max-content", fontSize: "2vmin" }} onClick={() => { window.location.href = "/sellers-page" }}>Add a Product</Button>
+                            ) : (<></>)
+                        }
                     </div>
                     <div className='historygrid'>
 
                         {info.map((data) => {
                             return <div style={{ display: "flex", flexDirection: "column", }}><Tile key={data._id} data={data} />
-                                {!state ? (<div style={{ display: "flex", flexDirection: "row", fontFamily:"Poppins, sans-serif", fontSize:"0.8em", justifyContent:"space-around" }}>
+                                {!state ? (<div style={{ display: "flex", flexDirection: "row", fontFamily: "Poppins, sans-serif", fontSize: "0.8em", justifyContent: "space-around" }}>
                                     <div>Stock: {data.stock}</div> <div> Sold:{
                                         data.buyers ? (
                                             <>{data.buyers.length}</>) : (0)

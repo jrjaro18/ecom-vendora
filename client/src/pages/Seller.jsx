@@ -125,8 +125,8 @@ const Seller = () => {
     useEffect(() => {
         const checkAuthorized = async () => {
             try {
-                const res = await axios.get("http://localhost:5000/api/check/authorized", { withCredentials: true });
-                if (res.status === 288||localStorage.getItem('userDetails')===null) {
+                const res = await axios.get("https://vendora-ecom.onrender.com/api/check/authorized", { withCredentials: true });
+                if (res.status === 288 || localStorage.getItem('userDetails') === null) {
                     localStorage.removeItem('userDetails');
                     window.location.href = 'http://localhost:3000/login';
                 }
@@ -163,7 +163,7 @@ const Seller = () => {
             formData.append('image', acceptedFiles[i]);
         }
         try {
-            const res = await axios.post('http://localhost:5000/api/seller/addproduct', formData, { withCredentials: true }, {
+            const res = await axios.post('https://vendora-ecom.onrender.com/api/seller/addproduct', formData, { withCredentials: true }, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 }
@@ -174,7 +174,7 @@ const Seller = () => {
             console.log(error);
         }
     }
-    
+
     return (
         <div className='sellerpagebody'>
             <Navbar />

@@ -33,9 +33,9 @@ const Navbar = () => {
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
     const handleLogout = async () => {
-        
+
         try {
-            const res = await axios.post('http://localhost:5000/api/user/logout', {}, { withCredentials: true });
+            const res = await axios.post('https://vendora-ecom.onrender.com/api/user/logout', {}, { withCredentials: true });
             localStorage.removeItem("userDetails");
             window.location.href = '/';
             console.log(res);
@@ -56,7 +56,7 @@ const Navbar = () => {
                     <li><a href="/your-products" style={{ display: 'flex', alignItems: "center", color: "#a7df8a", padding: "5px" }}><CategoryIcon /></a></li>
                     {
                         userDetails ?
-                            <li><div style={{ cursor: "pointer", display: 'flex', alignItems: "center", padding: "5px", color:"white"}} onClick={() => { handleLogout() }}><LogoutIcon /></div></li> :
+                            <li><div style={{ cursor: "pointer", display: 'flex', alignItems: "center", padding: "5px", color: "white" }} onClick={() => { handleLogout() }}><LogoutIcon /></div></li> :
                             <li><a href="/login" style={{ display: 'flex', alignItems: "center", padding: "5px" }}><PersonIcon /></a></li>
                     }
                     <li className="more" onClick={handleOpen}><MoreVertIcon style={{ color: "#f0dcdc" }} /></li>
@@ -73,7 +73,7 @@ const Navbar = () => {
                                 <li><a href="/wishlist" className='menulistitem'><FavoriteIcon />Wishlist</a></li>
                                 {
                                     userDetails ?
-                                        <li><div href="/" style={{ cursor: "pointer", color:"white" }} onClick={() => { handleLogout() }} className='menulistitem'><LogoutIcon />Logout</div></li> :
+                                        <li><div href="/" style={{ cursor: "pointer", color: "white" }} onClick={() => { handleLogout() }} className='menulistitem'><LogoutIcon />Logout</div></li> :
                                         <li><a href="/login" className='menulistitem'><PersonIcon />Login</a></li>
                                 }
                             </ul>

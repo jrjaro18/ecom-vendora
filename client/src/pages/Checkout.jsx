@@ -25,7 +25,7 @@ const Checkout = () => {
     };
     useEffect(() => {
         const fetchData = async () => {
-            const res = await axios.get('http://localhost:5000/api/user/get/cartItems', { withCredentials: true });
+            const res = await axios.get('https://vendora-ecom.onrender.com/api/user/get/cartItems', { withCredentials: true });
             if (res.status === 200) {
                 setDetails(res.data)
                 setLoading(false)
@@ -51,7 +51,7 @@ const Checkout = () => {
         e.preventDefault();
         console.log(pincode, address, state);
         try {
-            const res = await axios.post('http://localhost:5000/api/user/checkout', { pincode, address, state, price: details.userCartPrice }, { withCredentials: true });
+            const res = await axios.post('https://vendora-ecom.onrender.com/api/user/checkout', { pincode, address, state, price: details.userCartPrice }, { withCredentials: true });
             const userDetails = res.data.userDetails;
 
             const options = {
@@ -62,7 +62,7 @@ const Checkout = () => {
                 description: res.data.order.receipt,
                 order_id: res.data.order.id, // Pass the order ID
                 //success
-                callback_url: `http://localhost:5000/api/user/checkout/success/:${userDetails._id}}`,
+                callback_url: `https://vendora-ecom.onrender.com/api/user/checkout/success/:${userDetails._id}}`,
                 prefill: {
                     name: userDetails.firstname + " " + userDetails.lastname,
                     email: userDetails.email,

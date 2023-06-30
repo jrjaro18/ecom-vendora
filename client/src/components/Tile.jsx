@@ -8,10 +8,10 @@ const Tile = (data) => {
     window.location.href = `/product/?=${data.data._id}`;
   }
   return (
-    <div className="tilecontainer"onClick={()=>{handleClick()}}>
+    <div className="tilecontainer" onClick={() => { handleClick() }}>
       <div className="tileimagecontainer">
         <center>
-          <img className="tileimage" src={`http://localhost:5000/uploads/${image[0]}`} alt={`${image[0]}`} />
+          <img className="tileimage" src={`https://vendora-ecom.onrender.com/uploads/${image[0]}`} alt={`${image[0]}`} />
         </center>
       </div>
       <div className="tiletextcontainer">

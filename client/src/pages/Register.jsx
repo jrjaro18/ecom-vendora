@@ -108,33 +108,33 @@ const Register = () => {
             dob: formattedDate,
             gender: gend,
         }
-        try{
-        const res = await axios.post('http://localhost:5000/api/user/register', form);
-        //console.log(res);
-        if(res.status===202){
-            toast.error(res.data, {
-                position: "top-center",
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                progress: undefined,
-                theme: "light"
-            });
-        } else{
-            toast.success(res.data, {
-                position: "top-center",
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                progress: undefined,
-                theme: "light"
-            });
-            setTimeout(() => {
-                window.location.href='/login';
-            }, 3500);
-            
-        }
-        }catch(err){
+        try {
+            const res = await axios.post('https://vendora-ecom.onrender.com/api/user/register', form);
+            //console.log(res);
+            if (res.status === 202) {
+                toast.error(res.data, {
+                    position: "top-center",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    progress: undefined,
+                    theme: "light"
+                });
+            } else {
+                toast.success(res.data, {
+                    position: "top-center",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    progress: undefined,
+                    theme: "light"
+                });
+                setTimeout(() => {
+                    window.location.href = '/login';
+                }, 3500);
+
+            }
+        } catch (err) {
             console.log(err);
         }
     }

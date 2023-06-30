@@ -30,12 +30,12 @@ const Product = () => {
     //form
     const [rating, setRating] = useState(0);
     const [review, setReview] = useState('');
-    
+
 
     useEffect(() => {
         const productId = window.location.href.split('=')[1];
         const fetchData = async () => {
-            await axios.get(`http://localhost:5000/api/product/get/:${productId}`).then((res) => {
+            await axios.get(`https://vendora-ecom.onrender.com/api/product/get/:${productId}`).then((res) => {
                 if (res.status === 200) {
                     setProductTitle(res.data.title);
                     setProductPrice(res.data.price);
@@ -68,7 +68,7 @@ const Product = () => {
         fetchData();
         const setProductState = async () => {
             try {
-                const res = await axios.get(`http://localhost:5000/api/user/set/productState/forUser/:${productId}`, { withCredentials: true });
+                const res = await axios.get(`https://vendora-ecom.onrender.com/api/user/set/productState/forUser/:${productId}`, { withCredentials: true });
                 //console.log(res);
                 if (res.status === 200) {
                     setInCart(res.data.cart);
@@ -105,7 +105,7 @@ const Product = () => {
     //const preReview = [{ name: "Rohan Jaiswal", rating: 4, comment: "Good Product, Loved it!" }, { name: "Bhoomi Jain", rating: 2, comment: "Average Product, Not worth!" }]
     const handleCart = async () => {
         const productId = window.location.href.split('=')[1];
-        const res = await axios.post(`http://localhost:5000/api/user/alter/cart`, { productId: productId }, { withCredentials: true });
+        const res = await axios.post(`https://vendora-ecom.onrender.com/api/user/alter/cart`, { productId: productId }, { withCredentials: true });
         if (res.status === 200) {
             toast.success(res.data, {
                 position: "top-center",
@@ -140,7 +140,7 @@ const Product = () => {
     }
     const handleWishlist = async () => {
         const productId = window.location.href.split('=')[1];
-        const res = await axios.post(`http://localhost:5000/api/user/alter/wishlist`, { productId: productId }, { withCredentials: true });
+        const res = await axios.post(`https://vendora-ecom.onrender.com/api/user/alter/wishlist`, { productId: productId }, { withCredentials: true });
         if (res.status === 200) {
             toast.success(res.data, {
                 position: "top-center",
@@ -177,16 +177,16 @@ const Product = () => {
     const handleReviewSubmit = async (e) => {
         e.preventDefault();
         const productId = window.location.href.split('=')[1];
-        try{
-            const res = await axios.post('http://localhost:5000/api/product/add/review',{
+        try {
+            const res = await axios.post('https://vendora-ecom.onrender.com/api/product/add/review', {
                 productId: productId,
                 rating: rating,
                 review: review
-            },{withCredentials: true});
-            if(res.status === 200){
+            }, { withCredentials: true });
+            if (res.status === 200) {
                 window.location.reload();
-            } 
-            else if(res.status === 288){
+            }
+            else if (res.status === 288) {
                 toast.error("Login to Add", {
                     position: "top-center",
                     autoClose: 5000,
@@ -195,7 +195,7 @@ const Product = () => {
                     pauseOnHover: true,
                 });
             }
-            else{
+            else {
                 toast.error(res.data, {
                     position: "top-center",
                     autoClose: 5000,
@@ -205,7 +205,7 @@ const Product = () => {
                     draggable: true,
                 });
             }
-        } catch(err){
+        } catch (err) {
             console.log(err);
         }
     }
@@ -223,7 +223,7 @@ const Product = () => {
                                     {productImages.map((image, index) => (
                                         <div key={index}>
                                             <div>
-                                                <img className="productpagecarouselimage" src={"http://localhost:5000/uploads/" + image} alt={`Slide ${index}`} />
+                                                <img className="productpagecarouselimage" src={"https://vendora-ecom.onrender.com/uploads/" + image} alt={`Slide ${index}`} />
                                             </div>
                                         </div>
                                     ))}
@@ -247,7 +247,7 @@ const Product = () => {
                             </div>
 
                             <div className='productpagecontainercontent1buttons'>
-                                <Button variant="contained" disabled={(stock===0)} className='productpagecontainercontent1button1' onClick={() => { handleCart() }}>{!inCart ? (<>{stock!==0?(<>Add to Cart_</>):(<>Unavailable</>)}</>) : (<>Remove from Cart_</>)}<ShoppingCart /></Button>
+                                <Button variant="contained" disabled={(stock === 0)} className='productpagecontainercontent1button1' onClick={() => { handleCart() }}>{!inCart ? (<>{stock !== 0 ? (<>Add to Cart_</>) : (<>Unavailable</>)}</>) : (<>Remove from Cart_</>)}<ShoppingCart /></Button>
                                 <Button variant="contained" className='productpagecontainercontent1button2' onClick={() => { handleWishlist() }}>{!inWishlist ? (<>Add to Wishlist_</>) : (<>Remove from Wishlist_</>)}<FavoriteIcon /></Button>
                             </div>
                             <div className='productpagecontainercontent1description'>
@@ -263,8 +263,8 @@ const Product = () => {
                                 <div className='productpagecontainercontent1commentstitle'>
                                     Reviews
                                 </div>
-                                <form onSubmit={(e)=>{handleReviewSubmit(e)}}>
-                                    <Rating name="read-only" value={rating} readOnly={!canReview} style={{ marginBottom: '1.5vmax' }} onChange={(e)=>{setRating(e.target.value)}}/>
+                                <form onSubmit={(e) => { handleReviewSubmit(e) }}>
+                                    <Rating name="read-only" value={rating} readOnly={!canReview} style={{ marginBottom: '1.5vmax' }} onChange={(e) => { setRating(e.target.value) }} />
                                     <TextField
                                         disabled={!canReview}
                                         id="outlined-disabled"
@@ -273,7 +273,7 @@ const Product = () => {
                                         style={{ marginBottom: '1.5vmax', width: "99%" }}
                                         multiline
                                         rows={4}
-                                        onChange={(e)=>{setReview(e.target.value)}}
+                                        onChange={(e) => { setReview(e.target.value) }}
                                     />
 
                                     <Button variant="contained" className='productpagecontainercontent1button1' style={{ marginBottom: '3vmax' }} disabled={!canReview} type="submit">Submit</Button>

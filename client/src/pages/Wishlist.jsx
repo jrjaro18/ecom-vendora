@@ -10,7 +10,7 @@ const Wishlist = () => {
     const [results, setResults] = useState([])
     useEffect(() => {
         const fetchData = async () => {
-            const res = await axios.get('http://localhost:5000/api/user/get/wishlistItems', {
+            const res = await axios.get('https://vendora-ecom.onrender.com/api/user/get/wishlistItems', {
                 withCredentials: true,
             });
             if (res.status === 200) {

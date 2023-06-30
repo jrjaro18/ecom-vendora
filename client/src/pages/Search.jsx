@@ -19,7 +19,7 @@ const Search = () => {
         const url = window.location.href;
         async function fetchData() {
             setSearchterm(url.split('=')[1]);
-            axios.get(`http://localhost:5000/api/product/search/${url.split('=')[1]}`)
+            axios.get(`https://vendora-ecom.onrender.com/api/product/search/${url.split('=')[1]}`)
                 .then((res) => {
                     setLoading(false);
                     console.log(res.data);
@@ -32,7 +32,7 @@ const Search = () => {
         }
         fetchData();
     }, []);
-    
+
     return (
         <React.Fragment>
             <div className='searchpagebody'>
@@ -77,19 +77,19 @@ const Search = () => {
                             </div>
                             <div className='searchpagecomponentresultgrid'>
                                 {results.map((result) => (
-                                    <Tile key={result._id} data={result.item}/>
+                                    <Tile key={result._id} data={result.item} />
                                 ))}
                             </div>
                         </div>)
                         : (
                             <CircularProgress sx={{
-                            width: '100%',
-                            position: 'absolute',
-                            top: '50%',
-                            left: '46%',
-                            transform: 'translate(-50%, -50%)',
-                        }} />)
-                        }
+                                width: '100%',
+                                position: 'absolute',
+                                top: '50%',
+                                left: '46%',
+                                transform: 'translate(-50%, -50%)',
+                            }} />)
+                    }
                 </div>
             </div>
             <Footer />
