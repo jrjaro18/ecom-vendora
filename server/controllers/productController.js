@@ -24,9 +24,8 @@ exports.searchProduct = async (req, res) => {
         const products = await Product.find();
         const fuse = new Fuse(products, FuseOptions);
         const result = fuse.search(id);
-        res.status(200).send(result);
+        res.send(result);
     } catch (err) {
-        res.status(299).send('Internal Server Error');
         console.log(err);
     }
 }
