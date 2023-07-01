@@ -10,7 +10,7 @@ Vendora is an E-commerce platform here are its feature:
 7) Razorpay as a primary payment gateway for a robust and secure payment system
 8) All Other common features of an Ecommerce app like adding to Cart or Wishlist
 
-Link to deployed site: https://vendora.cyclic.app/
+Link to the deployed site: https://vendora.cyclic.app/
 
 For Client:
 >cd client,
